@@ -11,7 +11,14 @@
     "pages/updateRecordResult/index",
     "pages/updateRecordSuccess/index",
     "pages/sumRecord/index",
-    "pages/sumRecordResult/index"
+    "pages/sumRecordResult/index",
+    
+    "pages/firstLog-1/firstLog-1",
+    "pages/firstLog-2/firstLog-2",
+    "pages/firstLog-3/firstLog-3",
+    "pages/firstLog-4/firstLog-4",
+    "pages/firstLog-5/firstLog-5",
+    "pages/firstLog-6/firstLog-6"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
