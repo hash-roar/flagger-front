@@ -1,0 +1,1 @@
+"D:\coding\tools\微信web开发者工具\cli.bat" cloud functions deploy --e cloud1-2gq9tckw02ac5e97 --n quickstartFunctions --r --project "D:\working\flagger-front" --report_first && "D:\coding\tools\微信web开发者工具\cli.bat" cloud functions deploy --e flagger-cloud-6g1jljus84f48f7a --n quickstartFunctions --r --project "D:\working\flagger-front" --report
