@@ -5,8 +5,8 @@
     <radio class="selectGirl"></radio>
 </radio-group>
 <view class="genderImg">
-    <view><image src="/images/selectBoy.png"></image></view>
-    <view><image src="/images/selectGirl.png"></image></view>
+    <view><image src="/images/firstLog/selectBoy.png"></image></view>
+    <view><image src="/images/firstLog/selectGirl.png"></image></view>
 </view>
 <view class="BoyOrGirl">
     <text>男生</text>
