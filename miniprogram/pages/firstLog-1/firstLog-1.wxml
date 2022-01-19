@@ -1,0 +1,15 @@
+<!--pages/firstLog-1/firstLog-1.wxml-->
+<view class="askGender">Hi，你的性别是？</view>
+<radio-group class="selectGender">
+    <radio class="selectBoy" checked="true"></radio>
+    <radio class="selectGirl"></radio>
+</radio-group>
+<view class="genderImg">
+    <view><image src="/images/selectBoy.png"></image></view>
+    <view><image src="/images/selectGirl.png"></image></view>
+</view>
+<view class="BoyOrGirl">
+    <text>男生</text>
+    <text>女生</text>
+</view>
+<navigator url="/pages/firstLog-2/firstLog-2" class="next">下一步</navigator>

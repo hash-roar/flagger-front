@@ -1,0 +1,83 @@
+/* pages/firstLog-1/firstLog-1.wxss */
+.askGender {
+    position: absolute;
+    left: 100rpx;
+    top: 155rpx;
+    width: 308rpx;
+	height: 38rpx;
+	font-family: PingFangSC-Semibold;
+	font-size: 36rpx;
+	letter-spacing: 2rpx;
+}
+.selectGender,
+.genderImg {
+    display: flex;
+    width: 562rpx;
+    justify-content: space-between;
+    position: absolute;
+    left: 94rpx;
+    top: 375rpx;
+}
+.genderImg {
+    pointer-events: none;
+}
+.selectGender radio{
+    width: 230rpx;
+    height: 230rpx;
+}
+.selectGender .wx-radio-input{
+    width: 230rpx;
+    height: 230rpx;
+    background-color: #fffbe7;
+    border: 0;
+}
+.selectGender .wx-radio-input.wx-radio-input-checked {
+    background-color: #ffe974;
+}
+.selectGender .wx-radio-input.wx-radio-input-checked::before{
+    content: '';
+}
+.selectGender image{
+    width: 100rpx;
+    height: 100rpx;
+    justify-content: center;
+    align-items: center;
+}
+.genderImg view{
+    width: 230rpx;
+    height: 230rpx;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+.genderImg image{
+    width: 100rpx;
+    height: 100rpx;
+    /* position: absolute;
+    left: 65rpx;
+    top: 65rpx; */
+}
+.BoyOrGirl{
+    position: absolute;
+    top: 649rpx;
+    left: 176rpx;
+    display: flex;
+    width: 398rpx;
+    justify-content: space-between;
+}
+.next {
+    position: absolute;
+    top: 797rpx;
+    left: 94rpx;
+    width: 562rpx;
+	height: 82rpx;
+	background-color: #fdd245;
+    border-radius: 20rpx;
+    font-family: PingFangSC-Regular;
+	font-size: 30rpx;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 82rpx;
+}
