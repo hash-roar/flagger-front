@@ -1,1 +1,182 @@
 /* pages/firstLog-4/firstLog-4.wxss */
+/* pages/firstLog-2/firstLog-2.wxss */
+.skip{
+    position: absolute;
+    right: 28rpx;
+    top: 10rpx;
+    font-family: PingFangSC-Regular;
+	font-size: 18px;
+}
+.askInterest {
+    position: absolute;
+    left: 100rpx;
+    top: 155rpx;
+	height: 38rpx;
+	font-family: PingFangSC-Semibold;
+	font-size: 36rpx;
+	letter-spacing: 2rpx;
+}
+.chooseInterest {
+    position: absolute;
+    top: 293rpx;
+    height: 420rpx;
+}
+.selectFlag {
+    position: relative;
+    top: 0rpx;
+    left: 0rpx;
+    width: 1100rpx;
+    height: 420rpx;
+}
+.selectFlag view{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: PingFangSC-Regular;
+	font-size: 15px;
+	letter-spacing: 1px;
+}
+.selectFlag .wx-checkbox-input{
+    width: 190rpx;
+    height: 190rpx;
+    background-color: #f2f2f2;
+    border: 0;
+    border-radius: 50%;
+}
+.selectFlag .wx-checkbox-input.wx-checkbox-input-checked {
+    background-color: #ffe974;
+}
+.selectFlag .wx-checkbox-input.wx-checkbox-input-checked::before{
+    content: '';
+}
+.chooseFlag1 .wx-checkbox-input,
+.flagType1 {
+    position: absolute;
+    left: 38rpx;
+    top: 0rpx;
+    width: 190rpx;
+    height: 190rpx;
+}
+.chooseFlag2 .wx-checkbox-input,
+.flagType2 {
+    position: absolute;
+    left: 94rpx;
+    bottom: 0rpx;
+    width: 162rpx;
+    height: 162rpx;
+}
+.chooseFlag3 .wx-checkbox-input,
+.flagType3 {
+    position: absolute;
+    left: 234rpx;
+    top: 94rpx;
+    width: 190rpx;
+    height: 190rpx;
+}
+.chooseFlag4 .wx-checkbox-input,
+.flagType4 {
+    position: absolute;
+    left: 450rpx;
+    top: 0rpx;
+    width: 190rpx;
+    height: 190rpx;
+}
+.chooseFlag5 .wx-checkbox-input,
+.flagType5 {
+    position: absolute;
+    bottom: 0rpx;
+    left: 430rpx;
+    width: 178rpx;
+    height: 178rpx;
+}
+.chooseFlag6 .wx-checkbox-input,
+.flagType6 {
+    position: absolute;
+    left: 640rpx;
+    top: 132rpx;
+    width: 176rpx;
+    height: 176rpx;
+}
+.chooseFlag7 .wx-checkbox-input,
+.flagType7 {
+    position: absolute;
+    bottom: 0rpx;
+    left: 912rpx;
+    width: 162rpx;
+    height: 162rpx;
+}
+.chooseFlag8 .wx-checkbox-input,
+.flagType8 {
+    opacity: 0;
+    pointer-events: none;
+}
+.addOwnFlag .wx-checkbox-input,
+.addFlagType {
+    position: absolute;
+    left: 826rpx;
+    top: 0rpx;
+    width: 190rpx;
+    height: 190rpx;
+}
+.inputFlag {
+    position: absolute;
+    top: 451rpx;
+    left: 89rpx;
+    width: 572rpx;
+    height: 308rpx;
+    background-color: #fff;
+	border-radius: 10px;
+}
+.inputFlag text{
+    display: block;
+    width: 100%;
+    height: 36rpx;
+    padding-top: 56rpx;
+    padding-bottom: 40rpx;
+    text-align: center;
+    font-family: PingFangSC-Regular;
+	font-size: 18px;
+}
+.inputBox {
+    position: relative;
+    left: 56rpx;
+    width: 460rpx;
+	height: 66rpx;
+}
+.inputBox input{
+	background-color: #f2f2f2;
+    border-radius: 8px;
+    font-family: PingFangSC-Regular;
+    font-size: 15px;
+    padding: 0 12rpx;
+}
+.completeBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: solid 1px #f2f2f2;
+}
+.complete{
+    font-family: PingFangSC-Regular;
+    font-size: 15px;
+    color: #e89800;
+    background-color: #fff;
+}
+.next {
+    position: absolute;
+    top: 797rpx;
+    left: 94rpx;
+    width: 562rpx;
+	height: 82rpx;
+	background-color: #fdd245;
+    border-radius: 20rpx;
+    font-family: PingFangSC-Regular;
+	font-size: 30rpx;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 82rpx;
+}

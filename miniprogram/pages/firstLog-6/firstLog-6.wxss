@@ -1,1 +1,70 @@
 /* pages/firstLog-6/firstLog-6.wxss */
+.skip{
+    position: absolute;
+    right: 28rpx;
+    top: 10rpx;
+    font-family: PingFangSC-Regular;
+	font-size: 18px;
+}
+.askSoc {
+    position: absolute;
+    left: 100rpx;
+    top: 155rpx;
+	height: 38rpx;
+	font-family: PingFangSC-Semibold;
+	font-size: 36rpx;
+	letter-spacing: 2rpx;
+}
+.selectSoc,
+.chooseSoc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    left: 94rpx;
+    top: 283rpx;
+    width: 562rpx;
+    height: 386rpx;
+}
+.chooseSoc{
+    pointer-events: none;
+}
+.selectSoc radio,
+.chooseSoc view{
+    display: block;
+    width: 563rpx;
+    height: 74rpx;
+}
+.chooseSoc view{
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    line-height: 74rpx;
+    padding-left: 30rpx;
+}
+.selectSoc .wx-radio-input{
+    width: 563rpx;
+    height: 74rpx;
+    border-radius: 10rpx;
+    background-color: #f2f2f2;
+    border: 0;
+}
+.selectSoc .wx-radio-input.wx-radio-input-checked {
+    background-color: #ffe974;
+}
+.selectSoc .wx-radio-input.wx-radio-input-checked::before{
+    content: '';
+}
+.next {
+    position: absolute;
+    top: 797rpx;
+    left: 94rpx;
+    width: 562rpx;
+	height: 82rpx;
+	background-color: #fdd245;
+    border-radius: 20rpx;
+    font-family: PingFangSC-Regular;
+	font-size: 30rpx;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 82rpx;
+}

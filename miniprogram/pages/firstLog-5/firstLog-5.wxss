@@ -1,1 +1,70 @@
 /* pages/firstLog-5/firstLog-5.wxss */
+.skip{
+    position: absolute;
+    right: 28rpx;
+    top: 10rpx;
+    font-family: PingFangSC-Regular;
+	font-size: 18px;
+}
+.askEnv {
+    position: absolute;
+    left: 100rpx;
+    top: 155rpx;
+	height: 38rpx;
+	font-family: PingFangSC-Semibold;
+	font-size: 36rpx;
+	letter-spacing: 2rpx;
+}
+.selectEnv,
+.chooseEnv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    left: 94rpx;
+    top: 283rpx;
+    width: 562rpx;
+    height: 386rpx;
+}
+.chooseEnv{
+    pointer-events: none;
+}
+.selectEnv radio,
+.chooseEnv view{
+    display: block;
+    width: 563rpx;
+    height: 74rpx;
+}
+.chooseEnv view{
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    line-height: 74rpx;
+    padding-left: 30rpx;
+}
+.selectEnv .wx-radio-input{
+    width: 563rpx;
+    height: 74rpx;
+    border-radius: 10rpx;
+    background-color: #f2f2f2;
+    border: 0;
+}
+.selectEnv .wx-radio-input.wx-radio-input-checked {
+    background-color: #ffe974;
+}
+.selectEnv .wx-radio-input.wx-radio-input-checked::before{
+    content: '';
+}
+.next {
+    position: absolute;
+    top: 797rpx;
+    left: 94rpx;
+    width: 562rpx;
+	height: 82rpx;
+	background-color: #fdd245;
+    border-radius: 20rpx;
+    font-family: PingFangSC-Regular;
+	font-size: 30rpx;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 82rpx;
+}

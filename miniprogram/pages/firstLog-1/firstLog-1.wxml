@@ -1,4 +1,5 @@
 <!--pages/firstLog-1/firstLog-1.wxml-->
+<navigator class="skip" >跳过</navigator>
 <view class="askGender">Hi，你的性别是？</view>
 <radio-group class="selectGender">
     <radio class="selectBoy" checked="true"></radio>

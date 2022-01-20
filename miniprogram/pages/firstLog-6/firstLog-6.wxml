@@ -1,2 +1,17 @@
 <!--pages/firstLog-6/firstLog-6.wxml-->
-<text>pages/firstLog-6/firstLog-6.wxml</text>
+<navigator class="skip" >跳过</navigator>
+<view class="askSoc">你的社交程度是？</view>
+<radio-group class="selectSoc">
+    <radio ></radio>
+    <radio ></radio>
+    <radio ></radio>
+    <radio ></radio>
+</radio-group>
+<view class="chooseSoc">
+    <view>A<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>社恐</view>
+    <view>B<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>三五知己</view>
+    <view>C<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>派对动物</view>
+    <view>D<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>社交达人</view>
+</view>
+<navigator url="/pages/firstLog-6/firstLog-6" class="next">下一步</navigator>
+

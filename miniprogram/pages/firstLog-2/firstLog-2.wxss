@@ -1,9 +1,15 @@
 /* pages/firstLog-2/firstLog-2.wxss */
+.skip{
+    position: absolute;
+    right: 28rpx;
+    top: 10rpx;
+    font-family: PingFangSC-Regular;
+	font-size: 18px;
+}
 .askGrade {
     position: absolute;
     left: 100rpx;
     top: 155rpx;
-    width: 308rpx;
 	height: 38rpx;
 	font-family: PingFangSC-Semibold;
 	font-size: 36rpx;
