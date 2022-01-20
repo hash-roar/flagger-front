@@ -1,0 +1,10 @@
+<view class="portraitBox">头像</view>
+<view class="userBox">
+    <view>
+         <view class="userName">用户名</view>
+         <text class="iconfont icon-edit"></text>
+    </view>
+    <view class="tagBox">
+        <text class="tag">获赞</text>
+    </view>
+</view>
