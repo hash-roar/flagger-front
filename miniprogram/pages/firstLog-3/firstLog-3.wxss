@@ -5,7 +5,7 @@
     right: 28rpx;
     top: 10rpx;
     font-family: PingFangSC-Regular;
-	font-size: 18px;
+	font-size: 36rpx;
 }
 .askSchool {
     position: absolute;
@@ -44,7 +44,6 @@
     border-radius: 20rpx;
     font-family: PingFangSC-Regular;
 	font-size: 30rpx;
-    letter-spacing: 1px;
     text-align: center;
     line-height: 82rpx;
 }

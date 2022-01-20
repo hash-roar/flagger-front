@@ -1,0 +1,11 @@
+<!--pages/logIn/logIn.wxml-->
+<view class="welcome">
+    <view>你好，</view>
+    <view>欢迎来到华中大Flagger</view>
+</view>
+<form class="logInForm">
+    <view class="studentID"><input type="text" name="" id="" placeholder="学号"/></view>
+    <view class="studentPwd"><input type="password" name="" id="" placeholder="密码"/></view>
+    <button class="studentLog" style="height: 82rpx;width: 562rpx;">登录</button>
+</form>
+<button class="touristLog" style="width: 100%;">游客登录>></button>

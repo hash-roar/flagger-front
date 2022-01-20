@@ -1,0 +1,42 @@
+/* pages/logIn/logIn.wxss */
+.welcome {
+    position: absolute;
+    top: 155rpx;
+    left: 94rpx;
+    font-family: PingFangSC-Semibold;
+	font-size: 36rpx;
+}
+.logInForm {
+    position: absolute;
+    top: 335rpx;
+    left: 94rpx;
+    font-family: PingFangSC-Regular;
+	font-size: 30rpx;
+}
+.logInForm view{
+    display: flex;
+    align-items: center;
+    border-bottom: 2rpx solid #e6e6e6;
+    font-size: 30rpx;
+}
+.studentLog{
+    width: 562rpx;
+	height: 82rpx;
+    background-color: #bebebe;
+    /* background-color: #fdd245; */
+    border-radius: 10px;
+    margin-top: 72rpx;
+}
+.studentID,
+.studentPwd {
+    width: 564rpx;
+    height: 94rpx;
+}
+.touristLog {
+    position: absolute;
+    top: 709rpx;
+    background-color: #fff;
+    font-family: PingFangSC-Regular;
+	font-size: 30rpx;
+	color: #727374;
+}

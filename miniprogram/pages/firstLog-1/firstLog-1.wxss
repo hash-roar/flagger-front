@@ -83,7 +83,6 @@
     border-radius: 20rpx;
     font-family: PingFangSC-Regular;
 	font-size: 30rpx;
-    letter-spacing: 1px;
     text-align: center;
     line-height: 82rpx;
 }

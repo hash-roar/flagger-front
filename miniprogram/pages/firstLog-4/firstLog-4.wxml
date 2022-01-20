@@ -18,7 +18,7 @@
 <view class="inputFlag" wx:if="{{false}}">
     <text>自定义标签</text>
     <view class="inputBox"><input type="text" placeholder="请输入标签内容"/></view>
-    <view class="completeBox"><button class="complete">完成</button></view>
+    <view class="completeBox"><button class="complete" style="width: 100%;">完成</button></view>
 </view>
 <navigator url="/pages/firstLog-5/firstLog-5" class="next">下一步</navigator>
 
