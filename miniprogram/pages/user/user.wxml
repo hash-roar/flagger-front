@@ -5,6 +5,6 @@
          <text class="iconfont icon-edit"></text>
     </view>
     <view class="tagBox">
-        <text class="tag">获赞</text>
+        <text class="tag">获赞数</text>
     </view>
 </view>
