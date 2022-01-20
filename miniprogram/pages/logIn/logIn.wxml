@@ -1,7 +1,7 @@
 <!--pages/logIn/logIn.wxml-->
 <view class="welcome">
     <view>你好，</view>
-    <view>欢迎来到华中大Flagger</view>
+    <text>欢迎来到华中大<text style="font-weight: bolder;">Flagger</text></text>
 </view>
 <form class="logInForm">
     <view class="studentID"><input type="text" name="" id="" placeholder="学号"/></view>

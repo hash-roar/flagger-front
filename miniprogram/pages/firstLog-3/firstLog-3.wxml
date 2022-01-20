@@ -1,6 +1,6 @@
 <!--pages/firstLog-3/firstLog-3.wxml-->
 <navigator class="skip" >跳过</navigator>
-<view class="askSchool">Hi，你的学院是？</view>
+<view class="askSchool"><text style="font-weight: bold;">Hi</text>，你的学院是？</view>
 <picker-view class="chooseSchool" indicator-style="height: 74rpx;" indicator-class="indctBox">
     <picker-view-column class="pickLeft">
         <view wx:for="{{school}}" >{{item}}</view>

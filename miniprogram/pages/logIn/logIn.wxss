@@ -26,6 +26,9 @@
     /* background-color: #fdd245; */
     border-radius: 10px;
     margin-top: 72rpx;
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: normal;
 }
 .studentID,
 .studentPwd {
@@ -35,8 +38,10 @@
 .touristLog {
     position: absolute;
     top: 709rpx;
-    background-color: #fff;
+    background-color: transparent;
     font-family: PingFangSC-Regular;
 	font-size: 30rpx;
-	color: #727374;
+    color: #727374;
+    font-family: PingFangSC-Regular;
+    font-weight: normal;
 }

@@ -1,7 +1,7 @@
 <!--pages/firstLog-4/firstLog-4.wxml-->
 <!--pages/firstLog-3/firstLog-3.wxml-->
 <navigator class="skip" >跳过</navigator>
-<view class="askInterest">请选择你感兴趣的flag</view>
+<view class="askInterest">请选择你感兴趣的<text style="font-weight: bold;">flag</text></view>
 <scroll-view class="chooseInterest" scroll-x="true" style="width: 100%;">
     <checkbox-group class="selectFlag">
         <checkbox class="chooseFlag1"><view class="flagType1"><text>健身</text></view></checkbox>
