@@ -1,0 +1,28 @@
+<!--pages/history/history.wxml-->
+<view class="singleHistory">
+    <view class="historyTopic">
+        <view class="historyTitle">学习线性代数</view>
+        <view class="history-tag">人数</view>
+        <view class="history-tag">学习</view>
+    </view>
+    <view class="history-content">我要学习线性代我要学习线性代我要学习线性代我要学习线性代我要学习线性代我要学习线性代数</view>
+    <view class="history-detail">></view>
+</view>
+<view class="singleHistory">
+    <view class="historyTopic">
+        <view class="historyTitle">学习线性代数</view>
+        <view class="history-tag">人数</view>
+        <view class="history-tag">学习</view>
+    </view>
+    <view class="history-content">我要学习线性代我要学习线性代我要学习线性代我要学习线性代我要学习线性代我要学习线性代数</view>
+    <view class="history-detail">></view>
+</view>
+<view class="singleHistory">
+    <view class="historyTopic">
+        <view class="historyTitle">学习线性代数</view>
+        <view class="history-tag">人数</view>
+        <view class="history-tag">学习</view>
+    </view>
+    <view class="history-content">我要学习线性代我要学习线性代我要学习线性代我要学习线性代我要学习线性代我要学习线性代数</view>
+    <view class="history-detail">></view>
+</view>
