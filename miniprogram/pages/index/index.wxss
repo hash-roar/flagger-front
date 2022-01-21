@@ -43,7 +43,7 @@ text{
     margin-top: 118rpx;
 }
 .doneList {
-    opacity: 0.5;
+    /* opacity: 0.5; */
 }
 
 .foldBox{
@@ -73,4 +73,35 @@ text{
 .nothing view:last-of-type{
     font-size: 30rpx;
     margin-top: 34rpx;
+}
+.folder {
+    position: relative;
+    top: -64rpx;
+    height: 50rpx;
+}
+.folder view{
+    /*折叠样式*/
+    position: relative;
+    box-shadow: 0rpx 4rpx 14rpx 0rpx 
+		rgba(0, 0, 0, 0.1);
+    border-radius: 20rpx;
+    z-index: -3;
+    background-color: #fff;
+    margin: 0 auto;
+}
+.folder view:first-of-type{
+    width: 694rpx;
+    height: 60rpx;
+    z-index: -1;
+}
+.folder view:nth-of-type(2){
+    width: 686rpx;
+    height: 60rpx;
+    top: -48rpx;
+    z-index: -2;
+}
+.folder view:last-of-type{
+    width: 678rpx;
+    height: 60rpx;
+    top: -98rpx;
 }

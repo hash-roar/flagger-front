@@ -13,12 +13,16 @@
         <my-flag></my-flag>
         <my-flag></my-flag>
         <my-flag></my-flag>
-        <my-flag></my-flag>
     </view>
     <view class="done">
         <view class="foldBox"><text>已完成</text><image></image></view>
         <view class="doneList">
             <my-flag flagIsDone="true"></my-flag>
+            <view class="folder">
+                <view></view>
+                <view></view>
+                <view></view>
+            </view>
         </view>
     </view>
 </view>
