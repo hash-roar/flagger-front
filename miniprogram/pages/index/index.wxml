@@ -5,18 +5,25 @@
         <view class="createFlag">+</view>
     </view>
 </view>
-<view class="doing">
-    <my-flag></my-flag>
-    <my-flag></my-flag>
-    <my-flag></my-flag>
-    <my-flag></my-flag>
-    <my-flag></my-flag>
-    <my-flag></my-flag>
-    <my-flag></my-flag>
-</view>
-<view class="done">
-    <view class="foldBox"><text>已完成</text><image></image></view>
-    <view class="doneList">
-        <my-flag flagIsDone="true"></my-flag>
+<view hidden="{{false}}">
+    <view class="doing">
+        <my-flag></my-flag>
+        <my-flag></my-flag>
+        <my-flag></my-flag>
+        <my-flag></my-flag>
+        <my-flag></my-flag>
+        <my-flag></my-flag>
+        <my-flag></my-flag>
     </view>
+    <view class="done">
+        <view class="foldBox"><text>已完成</text><image></image></view>
+        <view class="doneList">
+            <my-flag flagIsDone="true"></my-flag>
+        </view>
+    </view>
+</view>
+
+<view hidden="{{true}}" class="nothing">
+    <view>您还没有进行中的Flag噢</view>
+    <view>快去加入或者创建一个吧</view>
 </view>

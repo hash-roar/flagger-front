@@ -57,3 +57,20 @@ text{
     width: 20rpx;
     height: 20rpx;
 }
+.nothing {
+    position: absolute;
+    top: 530rpx;
+    width: 100%;
+}
+.nothing view{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-family: PingFang-SC-Medium;
+	font-size: 40rpx;
+	color: #808080;
+}
+.nothing view:last-of-type{
+    font-size: 30rpx;
+    margin-top: 34rpx;
+}
