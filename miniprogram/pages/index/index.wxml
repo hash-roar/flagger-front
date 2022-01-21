@@ -1,2 +1,22 @@
 <!--pages/index/index-->
-<text>pages/index/index.wxml</text>
+<view class="topBar">
+    <text class="topText">我的Flag</text>
+    <view class="myFlag">
+        <view class="createFlag">+</view>
+    </view>
+</view>
+<view class="doing">
+    <my-flag></my-flag>
+    <my-flag></my-flag>
+    <my-flag></my-flag>
+    <my-flag></my-flag>
+    <my-flag></my-flag>
+    <my-flag></my-flag>
+    <my-flag></my-flag>
+</view>
+<view class="done">
+    <view class="foldBox"><text>已完成</text><image></image></view>
+    <view class="doneList">
+        <my-flag flagIsDone="true"></my-flag>
+    </view>
+</view>

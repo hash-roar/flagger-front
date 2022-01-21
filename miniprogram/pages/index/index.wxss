@@ -1,3 +1,59 @@
 text{
     color: var(--themeColor);
 }
+.topBar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 94rpx;
+    z-index: 999;
+}
+.topText{
+    position: absolute;
+    top: 25rpx;
+    left: 44rpx;
+}
+.myFlag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 94rpx;
+    background-color: #fee966;
+    margin-bottom: 24rpx;
+}
+.createFlag {
+    width: 58rpx;
+    height: 58rpx;
+    border-radius: 50%;
+    font-size: 50rpx;
+    font-weight: bold;
+    text-align: center;
+    line-height: 58rpx;
+    border: 8rpx solid #2c2c2c;
+}
+.doing,
+.done {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.doing {
+    margin-top: 118rpx;
+}
+.doneList {
+    opacity: 0.5;
+}
+
+.foldBox{
+    height: 70rpx;
+    display: flex;
+    width: 702rpx;
+    justify-content: space-between;
+    align-items: center;
+}
+.foldBox image{
+    width: 20rpx;
+    height: 20rpx;
+}
