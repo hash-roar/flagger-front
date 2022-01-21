@@ -1,0 +1,1 @@
+<view class="history-tag">  {{innerText}}</view>

@@ -1,0 +1,5 @@
+<view class="tagBox">
+    <userTag></userTag>
+    <userTag></userTag>
+    <userTag></userTag>
+</view>

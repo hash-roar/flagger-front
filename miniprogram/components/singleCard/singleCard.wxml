@@ -1,0 +1,8 @@
+<view class="single-card-box">
+    <cardLeft></cardLeft>
+    <image class="userPortrait"></image>
+    <view>
+        <view class="card-box">ABCABCABCABCABCABCAB</view>
+    </view>
+    <view class="punch-rate">15/30</view>
+</view>
