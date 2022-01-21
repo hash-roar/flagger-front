@@ -7,6 +7,7 @@
 		rgba(0, 0, 0, 0.1);
     border-radius: 20rpx;
     margin-bottom: 16rpx;
+    background-color: #fff;
 }
 .flagContent {
     display: inline-block;
