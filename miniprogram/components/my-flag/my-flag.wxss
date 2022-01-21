@@ -1,0 +1,72 @@
+/* components/my-flag/my-flag.wxss */
+.flagBox{
+    position: relative;
+    width: 702rpx;
+	height: 160rpx;
+	box-shadow: 0rpx 4rpx 14rpx 0rpx 
+		rgba(0, 0, 0, 0.1);
+    border-radius: 20rpx;
+    margin-bottom: 16rpx;
+}
+.flagContent {
+    display: inline-block;
+    width: auto;
+	height: 74rpx;
+    background-color: #ffef9f;
+    overflow: hidden;
+    text-align: center;
+    line-height: 74rpx;
+    border-radius: 20rpx 0 20rpx 0;
+    color: #000;
+    padding: 0 32rpx;
+}
+.memNum{
+    position: absolute;
+    left: 62rpx;
+    bottom: 28rpx;
+    height: 44rpx;
+}
+.headImg,
+.number {
+    display: inline-block;
+    position: relative;
+    width: 44rpx;
+    height: 44rpx;
+    border-radius: 50%;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 44rpx;
+    vertical-align: middle;
+}
+.memNum text{
+    font-family: PingFang SC Regular;
+	font-size: 24rpx;
+    color: #7b7b7b;
+    position: relative;
+    left: -100rpx;
+}
+.clockOnBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 48rpx;
+    right: 48rpx;
+    width: 106rpx;
+    height: 96rpx;
+}
+.clockOn{
+    background-color: #fddf40;
+    font-family: PingFang-SC-Medium;
+	font-size: 26rpx;
+    color: #404040;
+    line-height: 64rpx;
+    padding: 0%;
+    border-radius: 32rpx;
+}
+.progress {
+    font-family: PingFang SC Regular;
+	font-size: 24rpx;
+	color: #ff8000;
+}

@@ -1,0 +1,19 @@
+<!--components/my-flag/my-flag.wxml-->
+<view class="flagBox">
+    <text class="flagContent">{{"阅读《肖申克的救赎》"}}</text>
+    <view class="memNum">
+        <view class="headImg" style="transform: translateX(-50%);background-color: red;"></view>
+        <view class="headImg" style="transform: translateX(-100%);background-color: blue;"></view>
+        <view class="headImg" style="transform: translateX(-150%);background-color: green;"></view>
+        <view class="headImg" style="transform: translateX(-200%);background-color: yellow;"></view>
+        <view class="headImg" style="transform: translateX(-250%);background-color: purple;"></view>
+        <view class="number" style="transform: translateX(-300%);background-color: orange;">11</view>
+        <text>今日已打卡</text>
+    </view>
+    <view class="clockOnBox">
+        <button class="clockOn" style="width: 106rpx;height: 64rpx;" hidden="{{flagIsDone}}">打卡</button>
+        <button class="clockOn" style="width: 106rpx;height: 64rpx;background-color: #dedede;color: #fff;" hidden="{{!flagIsDone}}" disabled="true">打卡</button>
+        <view class="progress"  hidden="{{flagIsDone}}">{{9}}/{{30}}</view>
+        <view class="progress" style="color: #7b7b7b;"  hidden="{{!flagIsDone}}">{{14}}/{{30}}</view>
+    </view>
+</view>
