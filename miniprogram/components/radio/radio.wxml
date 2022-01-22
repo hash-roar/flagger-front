@@ -1,0 +1,4 @@
+<!--components/radio.wxml-->
+<view class="radio-group" >
+    <view class="radio {{item.checked?'radio-active':''}}" wx:for="{{arr}}" data-index="{{index}}"   data-value="{{item.value}}" catchtap="radioFun">{{item.value}} </view>
+</view>

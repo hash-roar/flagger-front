@@ -8,7 +8,7 @@
         <view class="headImg" style="transform: translateX(-200%);background-color: yellow;"></view>
         <view class="headImg" style="transform: translateX(-250%);background-color: purple;"></view>
         <view class="number" style="transform: translateX(-300%);background-color: orange;">11</view>
-        <text>今日已打卡</text>
+        <text class="text">今日已打卡</text>
     </view>
     <view class="clockOnBox">
         <button class="clockOn" style="width: 106rpx;height: 64rpx;" hidden="{{flagIsDone}}">打卡</button>

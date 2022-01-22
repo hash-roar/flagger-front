@@ -39,7 +39,7 @@
     line-height: 44rpx;
     vertical-align: middle;
 }
-.memNum text{
+.memNum .text{
     font-family: PingFang SC Regular;
 	font-size: 24rpx;
     color: #7b7b7b;
