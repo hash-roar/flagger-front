@@ -1,4 +1,7 @@
 /* pages/logIn/logIn.wxss */
+page{
+    background-color: #fff;
+}
 .welcome {
     position: absolute;
     top: 155rpx;

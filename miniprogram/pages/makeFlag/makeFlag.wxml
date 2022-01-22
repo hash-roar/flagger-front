@@ -1,0 +1,46 @@
+<!--pages/makeFlag/makeFlag.wxml-->
+<view class="topBar"><text class="topText">立个Flag</text></view>
+<view class="flagBox">
+    <view class="boxSetting name">
+        <text>名称</text>
+        <view><input type="text" placeholder="请输入名称"/></view>
+    </view>
+    <view class="boxSetting ">
+        <text>分类</text>
+        <view class="sortBox">
+            <!-- <my-radio class="sort-big" arr="{{sortBig}}"></my-radio> -->
+            <my-radio class="sort-small" hidden="{{1}}" arr="{{sortSmall}}"></my-radio>
+            <view class="addSort">+</view>
+        </view>
+    </view>
+    <view class="boxSetting">
+        <text>人数</text>
+        <view class="peopleNum">
+            <my-radio class="selectNum" arr="{{pplNum}}"></my-radio>
+        </view>
+    </view>
+    <view class="boxSetting">
+        <text>年段</text>
+        <view class="grade">
+            <my-checkbox class="selectGrade" arr="{{grade}}"></my-checkbox>
+        </view>
+    </view>
+    <view class="boxSetting">
+        <text>打卡周期</text>
+        <view class="cycle">
+            <my-radio class="selectCycle" arr="{{cycle}}"></my-radio>
+        </view>
+    </view>
+    <view class="boxSetting">
+        <text>打卡频率<text style="font-size: 24rpx;">(天/周)</text></text>
+        <view class="frequency">
+            <my-radio class="selectF" arr="{{frequency}}"></my-radio>
+        </view>
+    </view>
+    <view class="boxSetting">
+        <text>公告<text style="font-size: 24rpx;">(300字内)</text></text>
+        <view class="notice">
+            <textarea name="" id="" cols="60" rows="10" placeholder="公告将被展示在推荐页噢~" maxlength="300"></textarea>
+        </view>
+    </view>
+</view>

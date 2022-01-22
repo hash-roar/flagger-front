@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "my-radio": "/components/radio/radio",
+    "my-checkbox": "/components/checkbox/checkbox"
+  }
+}

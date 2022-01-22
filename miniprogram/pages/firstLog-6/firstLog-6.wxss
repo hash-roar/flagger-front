@@ -1,4 +1,7 @@
 /* pages/firstLog-6/firstLog-6.wxss */
+page{
+    background-color: #fff;
+}
 .skip{
     position: absolute;
     right: 28rpx;
@@ -49,7 +52,7 @@
     border: 0;
 }
 .selectSoc .wx-radio-input.wx-radio-input-checked {
-    background-color: #ffe974;
+    background-color: #ffe768;
 }
 .selectSoc .wx-radio-input.wx-radio-input-checked::before{
     content: '';

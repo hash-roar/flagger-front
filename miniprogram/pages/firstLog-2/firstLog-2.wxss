@@ -1,4 +1,7 @@
 /* pages/firstLog-2/firstLog-2.wxss */
+page{
+    background-color: #fff;
+}
 .skip{
     position: absolute;
     right: 28rpx;

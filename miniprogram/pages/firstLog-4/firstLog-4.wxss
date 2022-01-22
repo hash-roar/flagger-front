@@ -1,5 +1,7 @@
 /* pages/firstLog-4/firstLog-4.wxss */
-/* pages/firstLog-2/firstLog-2.wxss */
+page{
+    background-color: #fff;
+}
 .skip{
     position: absolute;
     right: 28rpx;
@@ -44,7 +46,7 @@
     border-radius: 50%;
 }
 .selectFlag .wx-checkbox-input.wx-checkbox-input-checked {
-    background-color: #ffe974;
+    background-color: #ffe768;
 }
 .selectFlag .wx-checkbox-input.wx-checkbox-input-checked::before{
     content: '';

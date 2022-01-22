@@ -1,4 +1,7 @@
 /* pages/firstLog-1/firstLog-1.wxss */
+page{
+    background-color: #fff;
+}
 .skip{
     position: absolute;
     right: 28rpx;
@@ -38,7 +41,7 @@
     border: 0;
 }
 .selectGender .wx-radio-input.wx-radio-input-checked {
-    background-color: #ffe974;
+    background-color: #ffe768;
 }
 .selectGender .wx-radio-input.wx-radio-input-checked::before{
     content: '';
