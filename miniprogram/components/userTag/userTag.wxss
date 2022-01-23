@@ -1,0 +1,7 @@
+.tagFather{
+    padding: 0 20rpx;
+    background-color: #fff1af;
+    border-radius: 50rpx;
+    height: 55rpx;
+    line-height: 55rpx;
+}

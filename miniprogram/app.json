@@ -9,6 +9,7 @@
     "pages/firstLog-4/firstLog-4",
     "pages/firstLog-5/firstLog-5",
     "pages/firstLog-6/firstLog-6",
+    "pages/makeFlag/makeFlag",
     "pages/logIn/logIn",
     "pages/index/index",
     "pages/search/search"
@@ -16,7 +17,7 @@
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#ffe768",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",

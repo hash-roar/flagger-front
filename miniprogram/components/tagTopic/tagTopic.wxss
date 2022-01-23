@@ -1,0 +1,9 @@
+/* components/tagTopic/tagTopic.wxml.wxss */
+.singleHistory .historyTopic{
+    display: flex;
+    align-items: center;
+    font-size: 40rpx;
+    color: black;
+    font-weight: 500;
+    background-color: transparent;
+}

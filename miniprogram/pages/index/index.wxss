@@ -43,7 +43,7 @@ text{
     margin-top: 118rpx;
 }
 .doneList {
-    /* opacity: 0.5; */
+    opacity: 0.5;
 }
 
 .foldBox{
