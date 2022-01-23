@@ -1,6 +1,9 @@
 <!--pages/makeFlag/makeFlag.wxml-->
-<view class="topBar"><text class="topText">立个Flag</text></view>
-<view class="flagBox">
+<view class="topBar"  style="padding-top:{{statusBarHeight}}px">
+    <navigator open-type="navigateBack">{{'<'}}</navigator>
+    <text class="topText">立个Flag</text>
+</view>
+<view class="flagBox" style="padding-top:{{statusBarHeight}}px">
     <view class="boxSetting name">
         <text>名称</text>
         <view><input type="text" placeholder="请输入名称"/></view>
@@ -10,7 +13,9 @@
         <view class="sortBox">
             <!-- <my-radio class="sort-big" arr="{{sortBig}}"></my-radio> -->
             <my-radio class="sort-small" hidden="{{1}}" arr="{{sortSmall}}"></my-radio>
-            <view class="addSort">+</view>
+            <view hidden="{{!addSortActive}}" class="showMask"></view>
+            <view class="addSort {{addSortActive?'inputBgc':''}}"><input type="text" placeholder="+" placeholder-style="color: #000;font-size: 50rpx;font-weight: bold;"  bindblur="addSortFun"/></view>
+            
         </view>
     </view>
     <view class="boxSetting">
@@ -29,6 +34,8 @@
         <text>打卡周期</text>
         <view class="cycle">
             <my-radio class="selectCycle" arr="{{cycle}}"></my-radio>
+            <view hidden="{{!addCycleActive}}" class="showMask"></view>
+            <view class="addCycle {{addCycleActive?'inputBgc':''}}"><input type="number" placeholder="自定义" placeholder-style="color: #000;font-size: 28rpx;" bindblur="addCycleFun" value="{{cycleNum}}"/></view>
         </view>
     </view>
     <view class="boxSetting">

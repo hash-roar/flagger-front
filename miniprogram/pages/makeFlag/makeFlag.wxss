@@ -14,7 +14,12 @@
     font-size: 36rpx;
     font-weight: bold;
 }
-
+navigator{
+    font-size: 60rpx;
+    font-weight: bold;
+    position: absolute;
+    left: 40rpx;
+}
 .flagBox {
     display: flex;
     align-items: center;
@@ -28,16 +33,18 @@
 }
 .boxSetting text{
     padding: 0 20rpx;
-    font-size: 16px;
+    font-size: 32rpx;
 	color: #808080;
 }
 .boxSetting>view {
+    position: relative;
     margin: 14rpx 0 26rpx;
 	box-shadow: 0 2rpx 14rpx 0 
         rgba(0, 0, 0, 0.1);
     border-radius: 34rpx;
     background-color: #fff;
-    padding: 20rpx 20rpx 0;
+    padding: 20rpx 20rpx;
+    height: auto;
 }
 .name view{
     padding: 0 20rpx;
@@ -49,20 +56,7 @@
     border-radius: 34rpx;
     padding: 0 24rpx;
 }
-.sortBox {
-	height: 350rpx;
-}
-.peopleNum,
-.frequency{
-    height: 100rpx;
-}
-.grade,
-.cycle {
-    height: 180rpx;
-}
-.notice {
-    height: 340rpx;
-}
+
 .notice textarea{
     padding: 18rpx 22rpx;
 }
@@ -81,7 +75,7 @@
     text-align: center;
     border-bottom: 10rpx solid #e3e3e3;
     color: #808080;
-    font-size: 28rpx;
+    /* font-size: 28rpx; */
 }
 .sort-big .radio-active{
     border-bottom: 10rpx solid #fee966;
@@ -94,7 +88,8 @@
 .selectNum .radio,
 .selectGrade .checkbox,
 .selectCycle .radio,
-.selectF .radio{
+.selectF .radio,
+.addCycle{
     display: inline-block;
     width: auto;
 	height: 60rpx;
@@ -104,7 +99,7 @@
     border-radius: 30rpx;
     padding: 0 25rpx;
     margin: 10rpx 11rpx;
-    font-size: 24rpx;
+    font-size: 28rpx;
 }
 .sort-small .radio-active,
 .selectNum .radio-active,
@@ -114,8 +109,24 @@
     background-color: #ffe768;
 }
 
-
 .addSort {
-    font-size: 50rpx;
-    font-weight: bold;
+    display: inline-block;
+    width: auto;
+}
+.addSort input,
+.addCycle input {
+    display: inline-block;
+    width: 85rpx;
+    height: 100%;
+}
+
+.inputBgc{
+    background-color: #ffe768;
+}
+.showMask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }

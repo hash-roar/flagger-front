@@ -1,14 +1,14 @@
 <!--pages/firstLog-3/firstLog-3.wxml-->
 <navigator class="skip" >跳过</navigator>
 <view class="askSchool"><text style="font-weight: bold;">Hi</text>，你的学院是？</view>
-<picker-view class="chooseSchool" indicator-style="height: 74rpx;" indicator-class="indctBox">
+<picker-view class="chooseSchool" indicator-style="height: 74rpx;" indicator-class="indctBox" bindchange="changeMajar">
     <picker-view-column class="pickLeft">
-        <view wx:for="{{school}}" >{{item}}</view>
+        <view wx:for="{{selectDepartment}}" wx:key="index">{{item.department}}</view>
     </picker-view-column>
 <!-- </picker-view>
 <picker-view> -->
     <picker-view-column class="pickRight">
-        <view wx:for="{{profession}}">{{item}}</view>
+        <view wx:for="{{tempMajor}}" wx:key="index">{{item.major}}</view>
     </picker-view-column>
 </picker-view>
 <navigator url="/pages/firstLog-4/firstLog-4" class="next">下一步</navigator>

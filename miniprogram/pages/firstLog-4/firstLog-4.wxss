@@ -107,6 +107,9 @@ page{
     width: 162rpx;
     height: 162rpx;
 }
+.chooseFlag7 .wx-checkbox-input.wx-checkbox-input-disabled{
+    background-color: #f2f2f2;
+}
 .chooseFlag8 .wx-checkbox-input,
 .flagType8 {
     opacity: 0;
@@ -127,7 +130,8 @@ page{
     width: 572rpx;
     height: 308rpx;
     background-color: #fff;
-	border-radius: 20rpx;
+    border-radius: 20rpx;
+    z-index: 999;
 }
 .inputFlag text{
     display: block;
@@ -143,7 +147,8 @@ page{
     position: relative;
     left: 56rpx;
     width: 460rpx;
-	height: 66rpx;
+    height: 66rpx;
+    z-index: 999;
 }
 .inputBox input{
 	background-color: #f2f2f2;
@@ -167,6 +172,15 @@ page{
     color: #e89800;
     background-color: #fff;
 }
+.mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
 .next {
     position: absolute;
     top: 797rpx;
@@ -179,4 +193,5 @@ page{
 	font-size: 30rpx;
     text-align: center;
     line-height: 82rpx;
+    z-index: 0;
 }
