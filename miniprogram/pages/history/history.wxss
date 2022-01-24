@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+/* pages/history/history.wxss */
+page{
+    display: flex;
+    margin: 0 15rpx;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20rpx;
+=======
 /* pages/history/history.wxss */
 page{
     display: flex;
@@ -47,4 +56,5 @@ page{
     right: 37rpx;
     top:70rpx;
     color: #5d5a45;
+>>>>>>> 26ca9489b14a632fa6db0d9cf9c36ae5ec540b29
 }

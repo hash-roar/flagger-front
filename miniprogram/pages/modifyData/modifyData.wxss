@@ -1,0 +1,150 @@
+/* pages/modifyData/modifyData.wxss */
+
+page{
+    padding:35rpx;
+    background-color: #ffffff;
+    /* background-color: pink; */
+}
+
+.user-data-box{
+    position: relative;
+}
+.user-single-box{
+    position: relative;
+    color: #878684;
+    margin-bottom: 60rpx;
+}
+.user-single-box input{
+    height: 100%;
+    width: 100%;
+}
+.data-portrait-box{
+    width: 100%;
+    height: 185rpx;
+    border-radius: 20rpx;
+    background-color: #fffbe7;
+}
+.data-portrait-box{
+    padding: 28rpx;
+    padding-left: 48rpx;
+    box-shadow:0px 0px 5px 5px #f1f0e9;
+}
+.data-username-box,
+.data-grade-box,
+.data-major-box,
+.data-prefer-flag-box,
+.data-environment-choosing-box,
+.data-degree-box
+{
+    background-color: #ffffff;
+    border-radius: 15rpx;
+    padding-left: 50rpx;
+    line-height: 90rpx;
+    box-shadow:0px 0px 3px 3px #f1f0e9;
+    font-size: 34rpx;
+}
+
+
+.data-grade-box{
+    margin-bottom: 10rpx;
+}
+
+.modify-portrait{
+    background-color: #ffffff;
+    border-radius: 15rpx;
+    padding-left: 50rpx;
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 50%;
+}
+.data-username-box,
+.data-grade-box,
+.data-major-box,
+.data-prefer-flag-box,
+.data-environment-choosing-box,
+.data-degree-box
+{
+    height: 90rpx;
+    background-color: #fffbe7;
+}
+.data-environment-choosing-box,
+.data-degree-box,
+.data-username-box{
+    margin-top: 10rpx;
+}
+
+.data-prefer-flag-box,
+.data-environment-choosing-box,
+.data-degree-box
+{
+    position: relative;
+}
+
+.icon-chooseUpfold,
+.icon-upArray{
+    position: absolute;
+    right: 20rpx;
+    top: 5rpx;
+}
+
+.icon-upArray{
+    display: inline-block;
+    font-weight: 700;
+}
+
+.saveModifyData{
+    width: 140rpx;
+    height: 80rpx;
+    font-size: 40rpx;
+    line-height: 80rpx;
+    text-align: center;
+    background-color: #fffbe7;
+    margin-top: 200rpx;
+    margin-left: 50%;
+    transform: translate(-50%,0);
+    border-radius: 30rpx;
+    color: #878684;
+    box-shadow:0px 0px 5px 5px #f1f0e9;
+}
+
+.prefer-detail,
+.prefer-environmemnt-detail,
+.prefer-degree-detail
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 120rpx;
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+    background-color: #fffbe7;
+}
+.prefer-detail{
+    position: absolute;
+    color: #a27f3b;
+    box-shadow:0px 0px 5px 5px #f1f0e9;
+}
+
+.prefer-flag-detail-one{
+    bottom: 350rpx;
+    z-index: 10;
+}
+
+.prefer-flag-detail-two{
+    bottom: 251rpx;
+    z-index: 10;
+}
+
+.prefer-flag-detail-three{
+    bottom: 153rpx;
+    z-index: 10;
+}
+.not-display{
+    display: none;
+}
+.can-display{
+    display: flex;
+}
