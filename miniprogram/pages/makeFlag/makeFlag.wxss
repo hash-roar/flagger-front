@@ -24,10 +24,15 @@
     font-weight: bold;
 }
 navigator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 60rpx;
     font-weight: bold;
     position: absolute;
     left: 40rpx;
+    width: 40rpx;
+    height: 40rpx;
 }
 .flagBox {
     display: flex;

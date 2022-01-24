@@ -1,7 +1,7 @@
 <!--pages/makeFlag/makeFlag.wxml-->
 <view class="topBar"  style="padding-top:{{statusBarHeight}}px">
     <view class="MKFLG" style="margin-top:{{statusBarHeight}}px">
-        <navigator open-type="navigateBack">{{'<'}}</navigator>
+        <navigator open-type="navigateBack"><image src="/icons/navigateBack.png" alt="{{'<'}}" style="width: 40rpx;height: 40rpx;"></image></navigator>
         <text class="topText">立个Flag</text>
     </view>
     
