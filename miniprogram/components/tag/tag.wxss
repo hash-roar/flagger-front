@@ -1,9 +1,0 @@
-.history-tag{
-    margin: 0 20rpx;
-    padding: 0 20rpx;
-    border-radius: 50rpx;
-    background-color: #fee24b;
-    font-size: 28rpx;
-    height: 50rpx;
-    line-height: 50rpx;
-}
