@@ -1,0 +1,9 @@
+<navigator url="/pages/flagDetail/flagDetail" class="singleHistory">
+    <view class="historyTopic">
+        <tagTopic></tagTopic>
+        <tag class = "history-tag"></tag>
+        <tag class = "history-tag"></tag>
+    </view>
+    <view class="history-content">我要学习线性代我要学习线性代我要学习线性代我要学习线性代我要学习线性代我要学习线性代数</view>
+    <view class="history-detail">></view>
+</navigator>

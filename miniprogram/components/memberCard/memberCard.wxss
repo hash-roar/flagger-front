@@ -1,0 +1,56 @@
+.single-card-box{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    border-radius: 18rpx;
+    width: 100%;
+    height: 128rpx;
+    background-color: #ffffff;
+}
+
+.rank{
+    width: 60rpx;
+    height: 60rpx;
+    font-size: 50rpx;
+    line-height: 60rpx;
+    text-align: center;
+    background-color: transparent;
+}
+.card-box{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 450rpx;
+    height: 128rpx;
+    padding: 20rpx 26rpx;
+    background-color: transparent;
+}
+.userPortrait{
+    width: 100rpx;
+    height: 100rpx;
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+.punch-tag-box{
+    display: flex;
+    margin-top: 5rpx;
+    color: #ab8945;
+}
+.punch-tag-one{
+    margin: 0;
+    width: 200rpx;
+}
+.punch-tag-two{
+    width: 98rpx;
+    text-align: center;
+    margin-left: 20rpx;
+}
+.nickname{
+    font-size: 32rpx;
+}
+.punch-rate{
+    font-size: 30rpx;
+}

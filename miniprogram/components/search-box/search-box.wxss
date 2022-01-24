@@ -1,0 +1,15 @@
+.search-input{
+    margin-top: 10rpx;
+    width: 700rpx;
+    height: 80rpx;
+    padding: 10rpx;
+    background-color: #ffffff;
+    /* background-color: pink; */
+    border-radius: 15rpx;
+}
+.search-text{
+    height: 80rpx;
+    text-align: center;
+    line-height: 60rpx;
+    
+}

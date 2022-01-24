@@ -1,0 +1,44 @@
+/* pages/history/history.wxss */
+page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20rpx;
+}
+.singleHistory{
+    position: relative;
+    width: 96%;
+    height: 172rpx;
+    padding: 20rpx;
+    border-radius: 10rpx;
+    margin-bottom: 20rpx;
+    background-color: #ffffff;
+}
+.singleHistory .historyTopic{
+    display: flex;
+    align-items: center;
+    font-size: 40rpx;
+    color: black;
+    font-weight: 500;
+    background-color: transparent;
+}
+.historyTitle{
+    height: 60rpx;
+}
+.history-content{
+    width: 100%;
+    margin-top: 20rpx;
+    padding-right: 100rpx;
+    background-color: transparent;
+    color: #746d49;
+}
+.history-detail{
+    position: absolute;
+    right: 37rpx;
+    top:70rpx;
+    color: #5d5a45;
+}
+
+.history-tag{
+    margin: 0 20rpx;
+}

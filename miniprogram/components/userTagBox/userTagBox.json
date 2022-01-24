@@ -1,0 +1,7 @@
+
+{
+    "component": true,
+    "usingComponents": {
+        "userTag": "/components/userTag/userTag"
+      }
+    }

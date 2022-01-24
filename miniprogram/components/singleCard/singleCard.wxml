@@ -1,0 +1,16 @@
+
+<view class="single-card-box">
+    <view class="rank">{{innerText}}</view>
+    <image src="../../images/default-portrait.png" class="userPortrait"></image>
+    <view>
+        <view class="card-box">
+            <view class="nickname">ABCABCCABCAB</view>
+            <view class="punch-tag-box">
+                <userTag class="punch-tag-one"></userTag>
+                <userTag class="punch-tag-two"></userTag> 
+                
+            </view>
+        </view>
+    </view>
+    <view class="punch-rate">15/30</view>
+</view>

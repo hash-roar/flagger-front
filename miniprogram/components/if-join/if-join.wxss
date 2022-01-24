@@ -1,0 +1,11 @@
+.join-box{
+    position: fixed;
+    bottom: 194rpx;
+    width: 94%;
+    height: 100rpx;
+    background-color: #fddf40;
+    border-radius: 20rpx;
+    line-height: 100rpx;
+    text-align: center;
+    font-size: 40rpx;
+}

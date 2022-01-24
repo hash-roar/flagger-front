@@ -1,0 +1,4 @@
+
+<view bindtap="handleUserTagTap" class="{{isUserTap.value?'tag-grey-back-black-word':'tagFather'}}">
+            获赞
+</view>
