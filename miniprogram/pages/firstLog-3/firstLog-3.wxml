@@ -11,4 +11,4 @@
         <view wx:for="{{tempMajor}}" wx:key="index">{{item.major}}</view>
     </picker-view-column>
 </picker-view>
-<navigator url="/pages/firstLog-4/firstLog-4" class="next">下一步</navigator>
+<navigator url="/pages/firstLog-4/firstLog-4" class="next" bindtap="askForFlagFun">下一步</navigator>

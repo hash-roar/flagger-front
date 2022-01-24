@@ -5,7 +5,7 @@ text{
     position: fixed;
     top: 0;
     width: 100%;
-    height: 45px;
+    height: 47px;
     z-index: 999;
     background-color: #ffe768;
 }
@@ -13,6 +13,8 @@ text{
     position: absolute;
     top: 25rpx;
     left: 44rpx;
+    color: #000;
+    font-size: 36rpx;
 }
 .myFlag{
     display: flex;
@@ -30,8 +32,9 @@ text{
     font-size: 50rpx;
     font-weight: bold;
     text-align: center;
-    line-height: 58rpx;
+    line-height: 52rpx;
     border: 8rpx solid #2c2c2c;
+    box-sizing: content-box;
 }
 .doing,
 .done {
@@ -53,10 +56,11 @@ text{
     width: 702rpx;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20rpx;
 }
 .foldBox image{
-    width: 20rpx;
-    height: 20rpx;
+    width: 40rpx;
+    height: 40rpx;
 }
 .nothing {
     position: absolute;

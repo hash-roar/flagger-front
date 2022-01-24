@@ -1,12 +1,21 @@
 /* pages/makeFlag/makeFlag.wxss */
 .topBar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 47px;
+    z-index: 999;
+    background-color: #ffe768;
+    
+}
+.MKFLG{
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
     width: 100%;
-    height: 94rpx;
+    height: 45px;
     z-index: 999;
     background-color: #ffe768;
 }

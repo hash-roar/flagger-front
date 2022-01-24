@@ -7,7 +7,7 @@ Page({
     data: {
         studentID: '',
         password: '',
-        loginBtnDisable: true
+        loginBtnDisable: true,
     },
     touristLogFun:function(){
         wx.switchTab({
@@ -15,11 +15,10 @@ Page({
         })
     },
     inputID:function(e){
-        this.setData({
-            studentID: e.detail.value
-        })
-        if(this.data.studentID[0]>='A'&&this.data.studentID[0]<='Z'&&this.data.studentID.length==10&&this.data.password.length>0){
+        const checkID=/^[A-Z]\d{9}/
+        if(e.detail.value.length==10&&checkID.test(e.detail.value)){
             this.setData({
+                studentID: e.detail.value,
                 loginBtnDisable: false
             })
         }
@@ -29,21 +28,22 @@ Page({
             })
         }
     },
-    inputPwd: function(e){
-        this.setData({
-            password: e.detail.value
-        })
-        if(this.data.studentID[0]>='A'&&this.data.studentID[0]<='Z'&&this.data.studentID.length==10&&this.data.password.length>0){
-            this.setData({
-                loginBtnDisable: false
-            })
-        }
-        else{
-            this.setData({
-                loginBtnDisable: true
-            })
-        }
-    },
+    // inputPwd: function(e){
+    //     this.setData({
+    //         password: e.detail.value
+    //     })
+    //     const checkID=/^[A-Z]\d{9}/
+    //     if(checkID.test(this.data.studentID)){
+    //         this.setData({
+    //             loginBtnDisable: false
+    //         })
+    //     }
+    //     else{
+    //         this.setData({
+    //             loginBtnDisable: true
+    //         })
+    //     }
+    // },
 
     /**
      * 生命周期函数--监听页面加载

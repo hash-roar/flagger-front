@@ -1,7 +1,10 @@
 <!--pages/makeFlag/makeFlag.wxml-->
 <view class="topBar"  style="padding-top:{{statusBarHeight}}px">
-    <navigator open-type="navigateBack">{{'<'}}</navigator>
-    <text class="topText">立个Flag</text>
+    <view class="MKFLG" style="margin-top:{{statusBarHeight}}px">
+        <navigator open-type="navigateBack">{{'<'}}</navigator>
+        <text class="topText">立个Flag</text>
+    </view>
+    
 </view>
 <view class="flagBox" style="padding-top:{{statusBarHeight}}px">
     <view class="boxSetting name">

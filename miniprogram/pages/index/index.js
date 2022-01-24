@@ -6,10 +6,16 @@ Page({
      */
     data: {
         statusBarHeight: wx.getSystemInfoSync()['statusBarHeight'],
+        fold: true
     },
     makeFlag: function(){
         wx.navigateTo({
           url: '/pages/makeFlag/makeFlag',
+        })
+    },
+    foldFun:function(){
+        this.setData({
+            fold: !this.data.fold
         })
     },
     /**

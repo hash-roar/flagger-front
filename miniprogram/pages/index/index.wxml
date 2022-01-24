@@ -18,7 +18,7 @@
         <my-flag></my-flag>
     </view>
     <view class="done">
-        <view class="foldBox"><text>已完成</text><image></image></view>
+        <view class="foldBox"><text style="color: #000;">已完成</text><image src="{{fold?'/icons/unfold.png':'/icons/fold.png'}}" class="foldImg" bindtap="foldFun"></image></view>
         <view class="doneList">
             <my-flag flagIsDone="true"></my-flag>
             <view class="folder">
