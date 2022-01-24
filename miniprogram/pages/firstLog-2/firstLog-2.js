@@ -5,10 +5,15 @@ Page({
      * 页面的初始数据
      */
     data: {
-        selectEdu: ['本科','研究生','博士'],
-        selectGrade:['大一','大二','大三','大四','研一','研二','研三']
+        selectEdu: [{id:1, value:'本科'},{id:2, value:'研究生'},{id:3, value:'博士'}],
+        selectGrade:[[{id:11, value:'本科一'},{id:12, value:'本科二'},{id:13, value:'本科三'},{id:14, value:'本科四'}],[{id:21, value:'研一'},{id:22, value:'研二'},{id:23, value:'研三'}],[{id:3, value:''}]],
+        tempGrade:[{id:11, value:'本科一'},{id:12, value:'本科二'},{id:13, value:'本科三'},{id:14, value:'本科四'}],
     },
-
+    changeGrade: function(e){
+        this.setData({
+            tempGrade: this.data.selectGrade[e.detail.value[0]]
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */

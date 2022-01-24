@@ -5,8 +5,9 @@ text{
     position: fixed;
     top: 0;
     width: 100%;
-    height: 94rpx;
+    height: 45px;
     z-index: 999;
+    background-color: #ffe768;
 }
 .topText{
     position: absolute;
@@ -18,8 +19,8 @@ text{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 94rpx;
-    background-color: #fee966;
+    height: 45px;
+    background-color: #ffe768;
     margin-bottom: 24rpx;
 }
 .createFlag {

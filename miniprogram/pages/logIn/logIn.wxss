@@ -22,12 +22,25 @@ page{
     border-bottom: 2rpx solid #e6e6e6;
     font-size: 30rpx;
 }
-.studentLog{
+.studentLog {
     width: 562rpx;
 	height: 82rpx;
-    background-color: #bebebe;
+    background-color: #ffe768 ;
+    color: #000 !important;
     /* background-color: #fdd245; */
-    border-radius: 10px;
+    border-radius: 20rpx;
+    margin-top: 72rpx;
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: normal;
+}
+.studentLog[disabled] {
+    width: 562rpx;
+	height: 82rpx;
+    background-color: #bebebe !important;
+    color: #000 !important;
+    /* background-color: #fdd245; */
+    border-radius: 20rpx;
     margin-top: 72rpx;
     font-size: 30rpx;
     font-family: PingFangSC-Regular;

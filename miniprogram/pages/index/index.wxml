@@ -1,12 +1,15 @@
 <!--pages/index/index-->
-<view class="topBar">
-    <text class="topText">我的Flag</text>
+<view class="topBar" style="padding-top:{{statusBarHeight}}px">
+    <text class="topText" style="padding-top:{{statusBarHeight}}px">我的Flag</text>
     <view class="myFlag">
-        <view class="createFlag">+</view>
+        <view class="createFlag" bindtap="makeFlag">+</view>
     </view>
 </view>
-<view hidden="{{false}}">
+<view hidden="{{false}}" style="padding-top:{{statusBarHeight}}px">
     <view class="doing">
+        <my-flag></my-flag>
+        <my-flag></my-flag>
+        <my-flag></my-flag>
         <my-flag></my-flag>
         <my-flag></my-flag>
         <my-flag></my-flag>

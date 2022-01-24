@@ -5,9 +5,19 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        hideInputFlag: true,
+        addOwnFlag: "自定义"
     },
-
+    inputFlagFun: function(){
+        this.setData({
+            hideInputFlag: !this.data.hideInputFlag
+        })
+    },
+    inputFun: function(e){
+        this.setData({
+            addOwnFlag: e.detail.value
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */

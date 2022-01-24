@@ -5,7 +5,44 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        studentID: '',
+        password: '',
+        loginBtnDisable: true
+    },
+    touristLogFun:function(){
+        wx.switchTab({
+          url: '/pages/index/index',
+        })
+    },
+    inputID:function(e){
+        this.setData({
+            studentID: e.detail.value
+        })
+        if(this.data.studentID[0]>='A'&&this.data.studentID[0]<='Z'&&this.data.studentID.length==10&&this.data.password.length>0){
+            this.setData({
+                loginBtnDisable: false
+            })
+        }
+        else{
+            this.setData({
+                loginBtnDisable: true
+            })
+        }
+    },
+    inputPwd: function(e){
+        this.setData({
+            password: e.detail.value
+        })
+        if(this.data.studentID[0]>='A'&&this.data.studentID[0]<='Z'&&this.data.studentID.length==10&&this.data.password.length>0){
+            this.setData({
+                loginBtnDisable: false
+            })
+        }
+        else{
+            this.setData({
+                loginBtnDisable: true
+            })
+        }
     },
 
     /**

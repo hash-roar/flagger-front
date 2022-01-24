@@ -4,8 +4,8 @@
     <text>欢迎来到华中大<text style="font-weight: bolder;">Flagger</text></text>
 </view>
 <form class="logInForm">
-    <view class="studentID"><input type="text" name="" id="" placeholder="学号"/></view>
-    <view class="studentPwd"><input type="password" name="" id="" placeholder="密码"/></view>
-    <button class="studentLog" style="height: 82rpx;width: 562rpx;">登录</button>
+    <view class="studentID"><input style="width: 100%;" type="text" name="" id="" placeholder="学号" bindinput="inputID"/></view>
+    <view class="studentPwd"><input style="width: 100%;" password="true" type="password" name="" id="" placeholder="密码" bindinput="inputPwd"/></view>
+    <button class="studentLog" style="height: 82rpx;width: 562rpx;" bindtap="studentLogFun" disabled="{{loginBtnDisable}}">登录</button>
 </form>
-<button class="touristLog" style="width: 100%;">游客登录>></button>
+<button class="touristLog" style="width: 100%;" bindtap="touristLogFun">游客登录>></button>
