@@ -1,0 +1,6 @@
+{
+  "navigationBarBackgroundColor": "#fddc32",
+  "usingComponents": {
+    "userTag":"/components/userTag/userTag"
+  }
+}

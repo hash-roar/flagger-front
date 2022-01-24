@@ -1,4 +1,9 @@
 <!--pages/history/history.wxml-->
+<<<<<<< HEAD
+<historyTag></historyTag>
+<historyTag></historyTag>
+<historyTag></historyTag>
+=======
 <view class="singleHistory">
     <view class="historyTopic">
         <view class="historyTitle">学习线性代数</view>
@@ -26,3 +31,4 @@
     <view class="history-content">我要学习线性代我要学习线性代我要学习线性代我要学习线性代我要学习线性代我要学习线性代数</view>
     <view class="history-detail">></view>
 </view>
+>>>>>>> 26ca9489b14a632fa6db0d9cf9c36ae5ec540b29

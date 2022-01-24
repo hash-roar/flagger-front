@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "notice":"/components/notice/notice",
+    "singleCard":"/components/singleCard/singleCard",
+    "userTag":"/components/userTag/userTag",
+    "tag":"/components/tag/tag",
+    "memberCard":"/components/memberCard/memberCard",
+    "if-join":"/components/if-join/if-join"
+  },
+  "navigationBarBackgroundColor":"#fee452"
+}
