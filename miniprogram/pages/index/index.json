@@ -1,9 +1,0 @@
-{
-  "usingComponents": {
-    "my-flag": "/components/my-flag/my-flag"
-  },
-  "navigationStyle": "custom",
-  "window": {
-    "navigationBarBackgroundColor": "#ffe768"
-  }
-}
