@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tag": "/components/tag/tag",
+    "historyTag": "/components/historyTag/historyTag"
+  },
+  "navigationBarBackgroundColor": "#fde24a",
+  "navigationBarTitleText":"历史记录"
+}

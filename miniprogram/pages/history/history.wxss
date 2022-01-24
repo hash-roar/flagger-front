@@ -1,0 +1,8 @@
+/* pages/history/history.wxss */
+page{
+    display: flex;
+    margin: 0 15rpx;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20rpx;
+}

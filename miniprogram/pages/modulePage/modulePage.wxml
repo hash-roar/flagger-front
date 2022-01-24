@@ -1,0 +1,21 @@
+<view class="iconfont icon-delete"></view>
+<view class="my-module">
+    <view class="my-module-title">
+        我的模块
+    </view>
+    <view class="module-tag-box">
+        <tag></tag>
+        <tag></tag>
+        <tag></tag>
+    </view>
+</view>
+<view class="more-module">
+    <view class="more-module-title">
+        更多模块
+    </view>
+    <view class="module-tag-box">
+        <tag></tag>
+        <tag></tag>
+        <tag></tag>
+    </view>
+</view>

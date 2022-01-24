@@ -1,0 +1,20 @@
+<search-box></search-box>
+<view class="search-flag-box">
+    <view class="search-left-box">
+        <tag></tag>
+        <tag></tag>
+        <tag></tag>
+        <tag></tag>
+        <tag></tag>
+    </view>
+    <navigator url="/pages/modulePage/modulePage" class="iconfont icon-more"></navigator>
+</view>
+<historyTag></historyTag>
+<historyTag></historyTag>
+<historyTag></historyTag>
+<historyTag></historyTag>
+<historyTag></historyTag>
+<historyTag></historyTag>
+<historyTag></historyTag>
+<historyTag></historyTag>
+<historyTag></historyTag>
