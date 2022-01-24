@@ -21,6 +21,14 @@ Component({
      * 组件的方法列表
      */
     methods: {
-
+        
+        flagDetailFun:function(e){
+            wx.navigateTo({
+              url: '/pages/flagDetail/flagDetail',
+            })
+        },
+        clockOnFun:function(){
+            console.log('打卡')
+        }
     }
 })
