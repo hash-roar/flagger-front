@@ -5,9 +5,24 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        hideGiveUp: true,
+        hideGiveUpMsg: true
     },
-
+    giveUpFlagFun:function(){
+        this.setData({
+            hideGiveUp: !this.data.hideGiveUp
+        })
+    },
+    confirmGiveUpFun:function(){
+        if(!this.data.hideGiveUp){
+            this.setData({
+                hideGiveUp: !this.data.hideGiveUp
+            })
+        }
+        this.setData({
+            hideGiveUpMsg: !this.data.hideGiveUpMsg
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */

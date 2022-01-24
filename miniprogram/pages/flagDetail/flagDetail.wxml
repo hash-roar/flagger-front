@@ -8,3 +8,19 @@
 <memberCard class="the-card"></memberCard>
 <!-- <if-join></if-join> -->
 <tag class="click-to-punch"></tag>
+
+<button class="giveUpFlag" style="width: 702rpx;background-color: #fff;color: #ff7566;margin-top: 40rpx;" bindtap="giveUpFlagFun">放弃</button>
+
+<view class="mask" hidden="{{hideGiveUp}}" bindtap="giveUpFlagFun"></view>
+<view hidden="{{hideGiveUp}}" class="confirmBox">
+    <text class="confirm-1">确定放弃吗？</text>
+    <text class="confirm-2">现在放弃相当于前功尽弃了</text>
+    <view class="keepUp" bindtap="giveUpFlagFun">再坚持一下</view>
+    <view class="confirmGiveUp" bindtap="confirmGiveUpFun">放弃</view>
+</view>
+<view class="mask" hidden="{{hideGiveUpMsg}}" bindtap="confirmGiveUpFun"></view>
+<view hidden="{{hideGiveUpMsg}}" class="confirmBox-2">
+    <text class="confirm-1">放弃成功</text>
+    <text class="confirm-2">下一次想成为你坚定的选择</text>
+    <view class="keepUp" bindtap="confirmGiveUpFun">好的</view>
+</view>
