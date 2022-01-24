@@ -5,8 +5,19 @@ Page({
      * 页面的初始数据
      */
     data: {
+        isJoined: false,
         hideGiveUp: true,
         hideGiveUpMsg: true
+    },
+    joinFlagFun:function(){
+        this.setData({
+            isJoined: !this.isJoined
+        })
+        wx.showToast({
+            title: '已加入！',  
+            icon: 'success',  
+            duration: 1500  
+        })
     },
     giveUpFlagFun:function(){
         this.setData({
@@ -17,6 +28,11 @@ Page({
         if(!this.data.hideGiveUp){
             this.setData({
                 hideGiveUp: !this.data.hideGiveUp
+            })
+        }
+        if(this.data.isJoined){
+            this.setData({
+                isJoined: !this.data.isJoined
             })
         }
         this.setData({

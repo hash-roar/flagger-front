@@ -24,10 +24,10 @@ page{
     right: 60rpx;
     bottom: 200rpx;
 }
-
-.giveupFlag{
+.joinFlag,
+.giveUpFlag{
     border-radius: 20rpx;
-    font-size: 28rpx;
+    /* font-size: 28rpx; */
 }
 .confirmBox,
 .confirmBox-2{
