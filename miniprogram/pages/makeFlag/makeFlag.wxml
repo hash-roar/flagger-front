@@ -50,4 +50,5 @@
             <textarea name="" id="" cols="60" rows="10" placeholder="公告将被展示在推荐页噢~" maxlength="300"></textarea>
         </view>
     </view>
+    <view class="boxSetting" style="margin-bottom: 40rpx;"><button class="confirm" style="width: 100%; font-weight: normal;background-color: #ffe768;">确定</button></view>
 </view>

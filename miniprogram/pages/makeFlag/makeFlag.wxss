@@ -36,7 +36,8 @@ navigator{
     font-size: 32rpx;
 	color: #808080;
 }
-.boxSetting>view {
+.boxSetting>view,
+.boxSetting>.confirm {
     position: relative;
     margin: 14rpx 0 26rpx;
 	box-shadow: 0 2rpx 14rpx 0 
