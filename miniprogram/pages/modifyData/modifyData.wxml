@@ -11,7 +11,7 @@
     </view>
 
     <view class="user-single-box">
-        <view bindtap="choosePreferFlag" wx:for="{{innerTextTwo}}" wx:for-item="item" data-index="{{index}}" wx:key="id" class="{{innerTextTwo[index].flagClass}}">
+        <view wx:for="{{innerTextTwo}}" wx:for-item="item" data-index="{{index}}" wx:key="id" class="{{innerTextTwo[index].flagClass}}">
             <input placeholder="{{innerTextTwo[index].value}}"></input>
         </view>
     </view>
@@ -24,21 +24,32 @@
     </view>
 
     <view class="prefer-detail prefer-flag-detail-one {{theTappedOne == 0 && isTap[theTappedOne].value === true ? 'can-display':'not-display'}}">
-        <userTag></userTag>
-        <userTag></userTag>
-        <userTag></userTag>
+        <userTag class="userTagChild"  bindtap="choosePreferContent" wx:for="{{preferFlagTime}}" wx:for-item="item" data-index="{{index}}" wx:key="id">
+        </userTag>
+
     </view>
     <view class="prefer-detail prefer-flag-detail-two {{theTappedOne == 1 && isTap[theTappedOne].value === true ? 'can-display':'not-display'}}">
-        <userTag></userTag>
-        <userTag></userTag>
-    </view>
-    <view class="prefer-detail prefer-flag-detail-three {{theTappedOne == 2 && isTap[theTappedOne].value === true ? 'can-display':'not-display'}}">
-        <userTag></userTag>
-        <userTag></userTag>
-        <userTag></userTag>
-        <userTag></userTag>
+        <userTag class="userTagChild" wx:for="{{preferEnviTime}}" wx:for-item="item" data-index="{{index}}" wx:key="id">
+        </userTag>
     </view>
 
-    
+    <view class="prefer-detail prefer-flag-detail-three {{theTappedOne == 2 && isTap[theTappedOne].value === true ? 'can-display':'not-display'}}">
+        <radio-group class="selectEnv">
+            <radio></radio>
+            <radio></radio>
+            <radio></radio>
+        </radio-group>
+        <!-- <userTag></userTag>
+        <userTag></userTag>
+        <userTag></userTag>
+        <userTag></userTag> -->
+        <view class="chooseEnv">
+            <view class="scary">社交恐惧</view>
+            <view>三五知己</view>
+            <view>社交达人</view>
+        </view>
+    </view>
+
+
     <navigator url="/pages/user/user" open-type="switchTab" class="saveModifyData">保存</navigator>
 </view>
