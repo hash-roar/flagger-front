@@ -145,6 +145,7 @@ page{
 }
 .inputBox {
     position: relative;
+    top: 40rpx;
     left: 56rpx;
     width: 460rpx;
     height: 66rpx;

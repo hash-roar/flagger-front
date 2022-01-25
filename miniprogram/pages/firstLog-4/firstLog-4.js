@@ -6,7 +6,8 @@ Page({
      */
     data: {
         hideInputFlag: true,
-        addOwnFlag: "自定义"
+        addOwnFlag: "自定义",
+        clear: ''
     },
     inputFlagFun: function(){
         this.setData({
@@ -14,9 +15,17 @@ Page({
         })
     },
     inputFun: function(e){
-        this.setData({
-            addOwnFlag: e.detail.value
-        })
+        if(e.detail.value.replace(/\s+/g, "").length>0){
+            this.setData({
+                addOwnFlag: e.detail.value
+            })
+        }
+        else{
+            this.setData({
+                addOwnFlag: "自定义",
+                clear: ''
+            })
+        }
     },
     /**
      * 生命周期函数--监听页面加载

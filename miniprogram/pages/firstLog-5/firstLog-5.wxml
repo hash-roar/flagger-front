@@ -1,5 +1,5 @@
 <!--pages/firstLog-5/firstLog-5.wxml-->
-<navigator class="skip" >跳过</navigator>
+<navigator class="skip"  url="/pages/firstLog-6/firstLog-6">跳过</navigator>
 <view class="askEnv">你的环境选择是？</view>
 <radio-group class="selectEnv">
     <radio ></radio>

@@ -1,5 +1,5 @@
 <!--pages/firstLog-2/firstLog-2.wxml-->
-<navigator class="skip" >跳过</navigator>
+<navigator class="skip" url="/pages/firstLog-3/firstLog-3" >跳过</navigator>
 <view class="askGrade"><text style="font-weight: bold;">Hi</text>，你的年级是？</view>
 <picker-view class="chooseGrade" indicator-style="height: 74rpx;" indicator-class="indctBox" bindchange="changeGrade">
     <picker-view-column class="pickLeft">

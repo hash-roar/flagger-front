@@ -39,7 +39,7 @@ page{
 }
 .next {
     position: absolute;
-    top: 737rpx;
+    top: 797rpx;
     left: 94rpx;
     width: 562rpx;
 	height: 82rpx;
