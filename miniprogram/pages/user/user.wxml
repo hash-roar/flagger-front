@@ -5,7 +5,13 @@
         <navigator url="/pages/modifyData/modifyData" class="iconfont icon-edit"></navigator>
     </view>
 
-    <userTagBox></userTagBox>
+    
+<view class="tagBox">
+    <yellowBack></yellowBack>
+    <yellowBack></yellowBack>
+    <yellowBack></yellowBack>
+</view>
+
     <complete></complete> 
     <myProgress></myProgress>
     <view class="flagComplete">
@@ -21,4 +27,4 @@
         </view>
     </view>
 </view> 
-<navigator url="/pages/history/history" class="history">历史记录 >></navigator>
+<navigator url="/pages/history/history" class="history">历史记录></navigator>
