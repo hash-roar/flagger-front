@@ -1,6 +1,7 @@
 {
     "component": true,
     "usingComponents": {
-        "userTag":"/components/userTag/userTag"
+        "userTag":"/components/userTag/userTag",
+        "yellowBack":"/components/yellowBack/yellowBack"
     }
 }
