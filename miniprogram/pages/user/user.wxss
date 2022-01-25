@@ -128,3 +128,7 @@ page{
       right: 0;
       color: #d3d3d3;
   }
+
+  userTag{
+      background-color: pink;
+  }
