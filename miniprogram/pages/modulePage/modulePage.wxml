@@ -1,4 +1,4 @@
-<view class="iconfont icon-delete"></view>
+<navigator url="/pages/search/search" open-type="switchTab" class="iconfont icon-delete"></navigator>
 <view class="my-module">
     <view class="my-module-title">
         我的模块
