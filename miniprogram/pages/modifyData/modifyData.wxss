@@ -148,3 +148,52 @@ page{
 .can-display{
     display: flex;
 }
+
+/* 单选框 */
+.selectEnv,
+.chooseEnv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    left: 21rpx;
+    top: 31rpx;
+    width: 510rpx;
+    height: 80rpx;
+    background-color: transparent;
+}
+.selectEnv{
+    width: 485rpx;
+}
+.chooseEnv{
+    pointer-events: none;
+}
+.selectEnv radio,
+.chooseEnv view{
+    display: block;
+    width: 115rpx;
+    background-color: transparent;
+    height: 90rpx;
+}
+.chooseEnv view{
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    width: 80px;
+    text-align: center;
+    line-height: 60rpx;
+    background-color: transparent;
+}
+.selectEnv .wx-radio-input{
+    
+    width: 80px;
+    height: 60rpx;
+    border-radius: 20rpx;
+    background-color: #f2f2f2;
+    border: 0;
+}
+.selectEnv .wx-radio-input.wx-radio-input-checked {
+    background-color: #fff1af;
+}
+.selectEnv .wx-radio-input.wx-radio-input-checked::before{
+    content: '';
+}
