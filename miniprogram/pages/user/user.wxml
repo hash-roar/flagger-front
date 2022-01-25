@@ -8,8 +8,6 @@
     
 <view class="tagBox">
     <yellowBack></yellowBack>
-    <yellowBack></yellowBack>
-    <yellowBack></yellowBack>
 </view>
 
     <complete></complete> 
