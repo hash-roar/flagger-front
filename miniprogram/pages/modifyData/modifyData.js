@@ -9,6 +9,34 @@ Page({
             type:Number,
             value:-1
         },
+        preferFlagTime:[
+            {
+                id:0,
+                value:"健身"
+            },
+            {
+                id:1,
+                value:"阅读"
+            },
+            {
+                id:2,
+                value:"学习"
+            },
+            {
+                id:3,
+                value:"其他"
+            },
+        ],
+        preferEnviTime:[
+            {
+                id:0,
+                value:"室内"
+            },
+            {
+                id:1,
+                value:"户外"
+            },
+        ],
         innerTextOne:[
             {
                 id:0,
@@ -83,7 +111,19 @@ Page({
     onShow: function () {
 
     },
-
+    choosePreferEnvironment(e)
+    {
+        const childUserTag = this.selectAllComponents('.userTagChild');
+        console.log("userTag",childUserTag);
+        console.log(preferEnviTime);
+        for(let i = 4; i < 6; i++)
+        {
+            childUserTag[i].setData({
+                ["innerText.value"]: 
+                    this.data.preferEnviTime[i - 4].value,
+               })
+        }
+    },
     choosePreferFlag(e){
         let nowIndex = parseInt(e.currentTarget.dataset.index);
         let temIsTap = !this.data.isTap[nowIndex].value;
@@ -94,8 +134,30 @@ Page({
         this.setData({
             theTappedOne:nowIndex.toString()
         })
-        console.log(this.data.theTappedOne);
-        console.log(this.data.isTap[nowIndex].value);
+        const childUserTag = this.selectAllComponents('.userTagChild');
+        console.log("userTag",childUserTag);
+        for(let i = 0; i < 4; i++)
+        {
+            childUserTag[i].setData({
+                ["innerText.value"]: 
+                    this.data.preferFlagTime[i].value,
+               })
+        }
+        for(let i = 4; i < 6; i++)
+        {
+            childUserTag[i].setData({
+                ["innerText.value"]: 
+                    this.data.preferEnviTime[i - 4].value,
+               })
+        }
+            
+
+    },
+
+    choosePreferContent(e)
+    {
+        let nowIndex = parseInt(e.currentTarget.dataset.index);
+        console.log(nowIndex);
     },
     /**
      * 生命周期函数--监听页面隐藏
