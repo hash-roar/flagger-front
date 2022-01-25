@@ -5,7 +5,7 @@
         <view class="card-box">
             <view class="nickname">ABCABCCABCAB</view>
             <view class="punch-tag-box">
-                <userTag class="punch-tag-one"></userTag>
+                <yellowBack class="punch-tag-one"></yellowBack>
             </view>
         </view>
     </view>
