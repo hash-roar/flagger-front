@@ -1,4 +1,4 @@
 
 <view class="tagFather">
-            获赞
+            {{innerText}}
 </view>
