@@ -1,4 +1,5 @@
 // pages/logIn/logIn.js
+const app=getApp();
 Page({
 
     /**
@@ -9,9 +10,10 @@ Page({
         password: '',
         loginBtnDisable: true,
     },
-    touristLogFun:function(){
-        wx.switchTab({
-          url: '/pages/index/index',
+    studentLogFun:function(){
+        // app.firstLogData.student_id=this.data.studentID 直接post学号
+        wx.navigateTo({
+          url: '/pages/firstLog-1/firstLog-1',
         })
     },
     inputID:function(e){
@@ -28,22 +30,7 @@ Page({
             })
         }
     },
-    // inputPwd: function(e){
-    //     this.setData({
-    //         password: e.detail.value
-    //     })
-    //     const checkID=/^[A-Z]\d{9}/
-    //     if(checkID.test(this.data.studentID)){
-    //         this.setData({
-    //             loginBtnDisable: false
-    //         })
-    //     }
-    //     else{
-    //         this.setData({
-    //             loginBtnDisable: true
-    //         })
-    //     }
-    // },
+    
 
     /**
      * 生命周期函数--监听页面加载

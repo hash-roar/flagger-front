@@ -1,11 +1,11 @@
 <!--pages/logIn/logIn.wxml-->
 <view class="welcome">
     <view>你好，</view>
-    <text>欢迎来到华中大<text style="font-weight: bolder;">Flagger</text></text>
+    <text>欢迎来到华中大<text style="font-weight: bolder;">Flagger</text>，</text>
+    <view>请填写你的学号</view>
 </view>
 <form class="logInForm">
     <view class="studentID"><input style="width: 100%;" type="text" name="" id="" placeholder="学号" bindinput="inputID"/></view>
-    <view class="studentPwd"><input style="width: 100%;" password="true" type="password" name="" id="" placeholder="密码" bindinput="inputPwd"/></view>
-    <button class="studentLog" style="height: 82rpx;width: 562rpx;" bindtap="studentLogFun" disabled="{{loginBtnDisable}}">登录</button>
+    <button class="studentLog" style="height: 82rpx;width: 562rpx;" bindtap="studentLogFun" disabled="{{loginBtnDisable}}">确定</button>
 </form>
-<button class="touristLog" style="width: 100%;" bindtap="touristLogFun">游客登录>></button>
+

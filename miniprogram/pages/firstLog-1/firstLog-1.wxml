@@ -1,9 +1,9 @@
 <!--pages/firstLog-1/firstLog-1.wxml-->
-<navigator class="skip" url="/pages/firstLog-2/firstLog-2" >跳过</navigator>
+<navigator class="skip" url="/pages/firstLog-2/firstLog-2" bindtap="skipFun">跳过</navigator>
 <view class="askGender"><text style="font-weight: bold;">Hi</text>，你的性别是？</view>
-<radio-group class="selectGender">
-    <radio class="selectBoy" checked="true"></radio>
-    <radio class="selectGirl"></radio>
+<radio-group class="selectGender" bindchange="selectGenderFun">
+    <radio class="selectBoy" value="{{1}}"></radio>
+    <radio class="selectGirl" value="{{2}}"></radio>
 </radio-group>
 <view class="genderImg">
     <view><image src="/icons/firstLog/selectBoy.png"></image></view>
@@ -13,4 +13,4 @@
     <text>男生</text>
     <text>女生</text>
 </view>
-<navigator url="/pages/firstLog-2/firstLog-2" class="next">下一步</navigator>
+<navigator url="/pages/firstLog-2/firstLog-2" class="next" bindtap="next1Fun">下一步</navigator>

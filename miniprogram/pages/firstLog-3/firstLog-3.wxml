@@ -1,14 +1,16 @@
 <!--pages/firstLog-3/firstLog-3.wxml-->
-<navigator class="skip" url="/pages/firstLog-4/firstLog-4" >跳过</navigator>
+<navigator class="skip" url="/pages/firstLog-4/firstLog-4" bindtap="skipFun">跳过</navigator>
 <view class="askSchool"><text style="font-weight: bold;">Hi</text>，你的学院是？</view>
-<picker-view class="chooseSchool" indicator-style="height: 74rpx;" indicator-class="indctBox" bindchange="changeMajar">
-    <picker-view-column class="pickLeft">
-        <view wx:for="{{selectDepartment}}" wx:key="index">{{item.department}}</view>
-    </picker-view-column>
-<!-- </picker-view>
-<picker-view> -->
-    <picker-view-column class="pickRight">
-        <view wx:for="{{tempMajor}}" wx:key="index">{{item.major}}</view>
-    </picker-view-column>
-</picker-view>
-<navigator url="/pages/firstLog-4/firstLog-4" class="next" bindtap="askForFlagFun">下一步</navigator>
+<view class="chooseSchool">
+    <picker-view class="pickLeft" indicator-style="height: 74rpx;" indicator-class="indctBoxLeft" bindchange="changeLeft">
+        <picker-view-column class="pickLeft">
+            <view wx:for="{{selectDepartment}}" wx:key="index">{{item.department}}</view>
+        </picker-view-column>
+    </picker-view>
+    <picker-view class="pickRight" indicator-style="height: 74rpx;" indicator-class="indctBoxRight" bindchange="changeRight">
+        <picker-view-column class="pickRight">
+            <view wx:for="{{tempMajor}}" wx:key="index">{{item.major}}</view>
+        </picker-view-column>
+    </picker-view>
+</view>
+<navigator url="/pages/firstLog-4/firstLog-4" class="next" bindtap="next3Fun">下一步</navigator>

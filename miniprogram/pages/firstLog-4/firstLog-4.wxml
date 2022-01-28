@@ -1,17 +1,17 @@
 <!--pages/firstLog-4/firstLog-4.wxml-->
-<navigator class="skip" url="/pages/firstLog-5/firstLog-5" >跳过</navigator>
+<navigator class="skip" url="/pages/firstLog-5/firstLog-5" bindtap="skipFun">跳过</navigator>
 <view class="askInterest">请选择你感兴趣的<text style="font-weight: bold;">flag</text></view>
 <scroll-view class="chooseInterest" scroll-x="true" style="width: 100%;">
-    <checkbox-group class="selectFlag">
-        <checkbox class="chooseFlag1"><view class="flagType1"><text>健身</text></view></checkbox>
-        <checkbox class="chooseFlag2"><view class="flagType2"><text>阅读</text></view></checkbox>
-        <checkbox class="chooseFlag3"><view class="flagType3"><text>学习</text></view></checkbox>
-        <checkbox class="chooseFlag4"><view class="flagType4"><text>减脂</text></view></checkbox>
-        <checkbox class="chooseFlag5"><view class="flagType5"><text>游玩</text></view></checkbox>
-        <checkbox class="chooseFlag6"><view class="flagType6"><text>科幻小说</text></view></checkbox>
+    <checkbox-group class="selectFlag" bindchange="selectFlagFun">
+        <checkbox class="chooseFlag1" value="1"><view class="flagType1"><text>健身</text></view></checkbox>
+        <checkbox class="chooseFlag2" value="1"><view class="flagType2"><text>阅读</text></view></checkbox>
+        <checkbox class="chooseFlag3" value="1"><view class="flagType3"><text>学习</text></view></checkbox>
+        <checkbox class="chooseFlag4" value="1"><view class="flagType4"><text>减脂</text></view></checkbox>
+        <checkbox class="chooseFlag5" value="1"><view class="flagType5"><text>游玩</text></view></checkbox>
+        <checkbox class="chooseFlag6" value="1"><view class="flagType6"><text>科幻小说</text></view></checkbox>
         <checkbox class="chooseFlag7" disabled="true"><view class="flagType7"><text>……</text></view></checkbox>
         <checkbox class="chooseFlag8" disabled="true"><view class="flagType8"><text></text></view></checkbox>
-        <checkbox class="ckbox addOwnFlag" bindtap="inputFlagFun"><view class="addFlagType"><text>{{addOwnFlag}}</text></view></checkbox>
+        <checkbox class="ckbox addOwnFlag" bindtap="inputFlagFun" value="{{addOwnFlag}}" checked="{{isChecked}}"><view class="addFlagType"><text>{{addOwnFlag}}</text></view></checkbox>
     </checkbox-group>
 </scroll-view>
 
@@ -21,5 +21,5 @@
     <view class="inputBox"><input type="text" placeholder="请输入标签内容" focus="true" bindinput="inputFun" maxlength="10" value="{{clear}}"/></view>
     <view class="completeBox"><button class="complete" style="width: 100%; "bindtap="inputFlagFun">完成</button></view>
 </view>
-<navigator url="/pages/firstLog-5/firstLog-5" class="next">下一步</navigator>
+<navigator url="/pages/firstLog-5/firstLog-5" class="next" bindtap="next4Fun">下一步</navigator>
 

@@ -19,16 +19,27 @@ page{
 	letter-spacing: 2rpx;
 }
 .chooseGrade{
+    display: flex;
     position: relative;
     left: 94rpx;
     top: 371rpx;
     width: 562rpx;
 	height: 192rpx;
 }
-.indctBox {
+.chooseGrade picker-view{
+    width: 281rpx;
+}
+
+.indctBoxLeft {
     height: 74rpx;
 	background-color: #f2f2f2;
-    border-radius: 20rpx;
+    border-radius: 20rpx 0 0 20rpx;
+    z-index: 0;
+}
+.indctBoxRight {
+    height: 74rpx;
+	background-color: #f2f2f2;
+    border-radius: 0 20rpx 20rpx 0;
     z-index: 0;
 }
 .chooseGrade view{

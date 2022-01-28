@@ -1,13 +1,24 @@
 // pages/firstLog-5/firstLog-5.js
+const app=getApp()
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        environment:0,
     },
-
+    radioFun:function(e){
+        this.setData({
+            environment:parseInt(e.detail.value)
+        })
+    },
+    next5Fun:function(){
+        app.firstLogData.environment=this.data.environment
+    }, 
+    skipFun:function(){
+        app.firstLogData.environment=0
+    },
     /**
      * 生命周期函数--监听页面加载
      */

@@ -1,4 +1,5 @@
 // pages/firstLog-3/firstLog-3.js
+const app=getApp()
 Page({
 
     /**
@@ -231,14 +232,28 @@ Page({
             {id:101,major:"数学与应用数学"},
             {id:102,major:"信息与计算科学"},
             {id:103,major:"统计学"}
-        ]
+        ],
+
+        index:0
     },
-    changeMajar: function(e){
+    changeLeft: function(e){
         this.setData({
             tempMajor: this.data.selectMajor[e.detail.value[0]]
         })
     },
-    // askForFlagFun:function(){
+    changeRight: function(e){  
+        this.setData({
+            index:e.detail.value[0]
+        })
+    },
+    next3Fun:function(){
+        app.firstLogData.major=parseInt(this.data.tempMajor[this.data.index].id)
+    },
+    skipFun:function(){
+        app.firstLogData.major=0
+    },
+    // 请求推送flag
+    // next3Fun:function(){
     //     const res = await wx.cloud.callContainer({
     //         config: {
     //           env: '填入云环境ID',
@@ -249,7 +264,6 @@ Page({
     //           'X-WX-SERVICE': 'xxx', // xxx中填入服务名称（微信云托管 - 服务管理 - 服务列表 - 服务名称）
     //         }
     //       });
-          
     //       console.log(res);
     // },
     /**

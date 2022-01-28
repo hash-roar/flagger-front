@@ -1,11 +1,11 @@
 <!--pages/firstLog-5/firstLog-5.wxml-->
-<navigator class="skip"  url="/pages/firstLog-6/firstLog-6">跳过</navigator>
+<navigator class="skip"  url="/pages/firstLog-6/firstLog-6" bindtap="skipFun">跳过</navigator>
 <view class="askEnv">你的环境选择是？</view>
-<radio-group class="selectEnv">
-    <radio ></radio>
-    <radio ></radio>
-    <radio ></radio>
-    <radio ></radio>
+<radio-group class="selectEnv" bindchange="radioFun">
+    <radio value="1"></radio>
+    <radio value="2"></radio>
+    <radio value="3"></radio>
+    <radio value="4"></radio>
 </radio-group>
 <view class="chooseEnv">
     <view>A<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>待室内</view>
@@ -13,4 +13,4 @@
     <view>C<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>拥抱大自然</view>
     <view>D<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>不确定</view>
 </view>
-<navigator url="/pages/firstLog-6/firstLog-6" class="next">下一步</navigator>
+<navigator url="/pages/firstLog-6/firstLog-6" class="next" bindtap="next5Fun">下一步</navigator>

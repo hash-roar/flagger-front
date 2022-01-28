@@ -9,13 +9,13 @@
 <view class="flagBox" style="padding-top:{{statusBarHeight}}px">
     <view class="boxSetting name">
         <text>名称</text>
-        <view><input type="text" placeholder="请输入名称"/></view>
+        <view><input type="text" placeholder="请输入名称" bindchange="nameFun" maxlength="30"/></view>
     </view>
     <view class="boxSetting ">
         <text>分类</text>
         <view class="sortBox">
             <!-- <my-radio class="sort-big" arr="{{sortBig}}"></my-radio> -->
-            <my-radio class="sort-small" hidden="{{1}}" arr="{{sortSmall}}"></my-radio>
+            <my-radio class="sort-small" arr="{{sortSmall}}" bind:result="sortResultFun"></my-radio>
             <view hidden="{{!addSortActive}}" class="showMask"></view>
             <view class="addSort {{addSortActive?'inputBgc':''}}"><input type="text" placeholder="+" placeholder-style="color: #000;font-size: 50rpx;font-weight: bold;"  bindblur="addSortFun"/></view>
             
@@ -24,34 +24,34 @@
     <view class="boxSetting">
         <text>人数</text>
         <view class="peopleNum">
-            <my-radio class="selectNum" arr="{{pplNum}}"></my-radio>
+            <my-radio class="selectNum" arr="{{pplNum}}" bind:result="pplNumResultFun"></my-radio>
         </view>
     </view>
     <view class="boxSetting">
         <text>年段</text>
         <view class="grade">
-            <my-checkbox class="selectGrade" arr="{{grade}}"></my-checkbox>
+            <my-checkbox class="selectGrade" arr="{{grade}}"  bind:result="gradeResultFun"></my-checkbox>
         </view>
     </view>
     <view class="boxSetting">
         <text>打卡周期</text>
         <view class="cycle">
-            <my-radio class="selectCycle" arr="{{cycle}}"></my-radio>
+            <my-radio class="selectCycle" arr="{{cycle}}" bind:result="cycleResultFun"></my-radio>
             <view hidden="{{!addCycleActive}}" class="showMask"></view>
-            <view class="addCycle {{addCycleActive?'inputBgc':''}}"><input type="number" placeholder="自定义" placeholder-style="color: #000;font-size: 28rpx;" bindblur="addCycleFun" value="{{cycleNum}}"/></view>
+            <view class="addCycle {{addCycleActive?'inputBgc':''}}"><input type="number" placeholder="自定义" placeholder-style="color: #000;font-size: 28rpx;" bindblur="addCycleFun" value="{{cycleNum}}"/><text style="display:{{hasNum?'inline-block':'none'}}; height: 100%;vertical-align: top;color: black;padding: 0;">天</text></view>
         </view>
     </view>
     <view class="boxSetting">
         <text>打卡频率<text style="font-size: 24rpx;">(天/周)</text></text>
         <view class="frequency">
-            <my-radio class="selectF" arr="{{frequency}}"></my-radio>
+            <my-radio class="selectF" arr="{{Frequency}}" bind:result="fqcResultFun"></my-radio>
         </view>
     </view>
     <view class="boxSetting">
         <text>公告<text style="font-size: 24rpx;">(300字内)</text></text>
         <view class="notice">
-            <textarea name="" id="" cols="60" rows="10" placeholder="公告将被展示在推荐页噢~" maxlength="300"></textarea>
+            <textarea name="" id="" cols="60" rows="10" placeholder="公告将被展示在推荐页噢~" maxlength="300" bindinput="announceFun"></textarea>
         </view>
     </view>
-    <view class="boxSetting" style="margin-bottom: 40rpx;"><button class="confirm" style="width: 100%; font-weight: normal;background-color: #ffe768;">确定</button></view>
+    <view class="boxSetting" style="margin-bottom: 40rpx;"><button class="confirm" style="width: 100%; font-weight: normal;background-color: #ffe768;" bindtap="confirmFun">确定</button></view>
 </view>

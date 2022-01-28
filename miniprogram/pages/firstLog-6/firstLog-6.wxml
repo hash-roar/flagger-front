@@ -1,11 +1,11 @@
 <!--pages/firstLog-6/firstLog-6.wxml-->
-<navigator class="skip" open-type="switchTab" url="/pages/index/index" >跳过</navigator>
+<navigator class="skip" open-type="switchTab" url="/pages/index/index" bindtap="skipFun">跳过</navigator>
 <view class="askSoc">你的社交程度是？</view>
 <radio-group class="selectSoc">
-    <radio ></radio>
-    <radio ></radio>
-    <radio ></radio>
-    <radio ></radio>
+    <radio value="1"></radio>
+    <radio value="2"></radio>
+    <radio value="3"></radio>
+    <radio value="4"></radio>
 </radio-group>
 <view class="chooseSoc">
     <view>A<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>社恐</view>
@@ -13,5 +13,5 @@
     <view>C<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>派对动物</view>
     <view>D<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>社交达人</view>
 </view>
-<navigator url="/pages/index/index" class="next" open-type="switchTab">下一步</navigator>
+<navigator url="/pages/index/index" class="next" open-type="switchTab" bindtap="next6Fun">下一步</navigator>
 

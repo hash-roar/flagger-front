@@ -25,7 +25,7 @@ page{
 .studentLog {
     width: 562rpx;
 	height: 82rpx;
-    background-color: #ffe768 ;
+    background-color: #fdd245 ;
     color: #000 !important;
     /* background-color: #fdd245; */
     border-radius: 20rpx;
@@ -33,6 +33,7 @@ page{
     font-size: 30rpx;
     font-family: PingFangSC-Regular;
     font-weight: normal;
+    line-height: 54rpx;
 }
 .studentLog[disabled] {
     width: 562rpx;
@@ -46,18 +47,7 @@ page{
     font-family: PingFangSC-Regular;
     font-weight: normal;
 }
-.studentID,
-.studentPwd {
+.studentID{
     width: 564rpx;
     height: 94rpx;
-}
-.touristLog {
-    position: absolute;
-    top: 709rpx;
-    background-color: transparent;
-    font-family: PingFangSC-Regular;
-	font-size: 30rpx;
-    color: #727374;
-    font-family: PingFangSC-Regular;
-    font-weight: normal;
 }
