@@ -15,7 +15,7 @@ App({
     }
 
     this.globalData = {};
-  }
+  },
   firstLogData: {
     sex:0,
     grade:0, 
