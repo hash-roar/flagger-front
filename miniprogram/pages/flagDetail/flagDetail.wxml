@@ -1,6 +1,6 @@
 <!--pages/historyDetail/historyDetail.wxml-->
 <view class="notice-title">公告</view>
-<notice class="notice-content"></notice>
+<notice class="notice-content" text="{{flagInfo.announcement}}"></notice>
 <view class="card-count">打卡次数</view>
 <singleCard class="the-card"></singleCard>
 <memberCard class="the-card"></memberCard>

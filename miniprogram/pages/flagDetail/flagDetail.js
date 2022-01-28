@@ -7,7 +7,9 @@ Page({
     data: {
         isJoined: false,
         hideGiveUp: true,
-        hideGiveUpMsg: true
+        hideGiveUpMsg: true,
+        
+
     },
     joinFlagFun:function(){
         this.setData({
