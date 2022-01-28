@@ -26,6 +26,7 @@
     left: 62rpx;
     bottom: 28rpx;
     height: 44rpx;
+    width: 280rpx;
 }
 .headImg,
 .number {
@@ -36,15 +37,25 @@
     border-radius: 50%;
     font-size: 26rpx;
     text-align: center;
-    line-height: 44rpx;
+    line-height: 40rpx;
     vertical-align: middle;
 }
+.number{
+    transform: translateX(-300%);
+    background-color: #fff;
+    border: black 2rpx solid;
+    box-sizing: border-box;
+    
+}
 .memNum .text{
+    display: inline-block;
+    height: 100%;
     font-family: PingFang SC Regular;
 	font-size: 24rpx;
     color: #7b7b7b;
-    position: relative;
-    left: -100rpx;
+    position: absolute;
+    right: 0;
+    line-height: 44rpx;
 }
 .clockOnBox{
     display: flex;

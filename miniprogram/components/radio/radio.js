@@ -24,9 +24,11 @@ Component({
         radioFun: function(e){
             let items=this.properties.arr
             let currentval = e.target.dataset.value;
+            let index=0;
             for (let i = 0; i < items.length; i++) {
                 if (currentval==items[i].value) {
                     items[i].checked = true;
+                    index=i;
                 } else {
                     items[i].checked = false;
                 }
@@ -34,6 +36,7 @@ Component({
             this.setData({
                 arr: items
             })
+            this.triggerEvent('result',items[index])
         }
     }
 })

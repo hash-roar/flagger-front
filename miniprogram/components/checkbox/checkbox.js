@@ -25,6 +25,7 @@ Component({
             this.setData({
                 arr: items
             })
+            this.triggerEvent('result',items)
         }
     }
 })

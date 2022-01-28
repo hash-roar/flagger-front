@@ -1,19 +1,15 @@
 <!--components/my-flag/my-flag.wxml-->
 <view class="flagBox" catchtap="flagDetailFun">
-    <text class="flagContent">{{"阅读《肖申克的救赎》"}}</text>
+    <text class="flagContent">{{flagObj.flagger_title}}</text>
     <view class="memNum">
-        <view class="headImg" style="transform: translateX(-50%);background-color: red;"></view>
-        <view class="headImg" style="transform: translateX(-100%);background-color: blue;"></view>
-        <view class="headImg" style="transform: translateX(-150%);background-color: green;"></view>
-        <view class="headImg" style="transform: translateX(-200%);background-color: yellow;"></view>
-        <view class="headImg" style="transform: translateX(-250%);background-color: purple;"></view>
-        <view class="number" style="transform: translateX(-300%);background-color: orange;">11</view>
+        <image class="headImg" wx:for="{{flagObj.finished_avatar_url}}" wx:key="{{index}}" style="transform: translateX({{(-50*index-50)+'%'}});background-color: red;"></image>
+        <view class="number" style="display: {{flagObj.finished_num>5?'inline-block':'none'}};">{{flagObj.finished_num}}</view>
         <text class="text">今日已打卡</text>
     </view>
     <view class="clockOnBox">
         <button class="clockOn" style="width: 106rpx;height: 64rpx;" hidden="{{flagIsDone}}" catchtap="clockOnFun">打卡</button>
         <button class="clockOn" style="width: 106rpx;height: 64rpx;background-color: #dedede;color: #fff;" hidden="{{!flagIsDone}}" disabled="true">打卡</button>
-        <view class="progress"  hidden="{{flagIsDone}}">{{9}}/{{30}}</view>
-        <view class="progress" style="color: #7b7b7b;"  hidden="{{!flagIsDone}}">{{14}}/{{30}}</view>
+        <view class="progress"  hidden="{{flagIsDone}}">{{flagObj.flagger_progress}}</view>
+        <view class="progress" style="color: #7b7b7b;"  hidden="{{!flagIsDone}}">{{flagObj.flagger_progress}}</view>
     </view>
 </view>

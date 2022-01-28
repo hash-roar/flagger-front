@@ -7,13 +7,15 @@ Component({
         flagIsDone: {
             type: Boolean,
             value: false
-        }
+        },
+        flagObj:Object
     },
 
     /**
      * 组件的初始数据
      */
     data: {
+        arr:[1,2,3,4,5]
 
     },
 
