@@ -6,7 +6,39 @@ Page({
      */
     data: {
         statusBarHeight: wx.getSystemInfoSync()['statusBarHeight'],
-        fold: true
+        isFold: true,
+        flagObjArr:[
+            {
+                "fid": 123, 
+                "flagger_title":"阅读《肖申克的救赎》",
+                "finished_num":34, 
+                "flagger_progress":"23/180", 
+                "finished_avatar_url":["url1","url2","url3","url4","url5"] 
+            },
+            {
+                "fid": 124, 
+                "flagger_title":"title",
+                "finished_num":4, 
+                "flagger_progress":"9/30", 
+                "finished_avatar_url":["url1","url2"] 
+            },
+        ],
+        doneFlagObjArr:[
+            {
+                "fid": 123, 
+                "flagger_title":"阅读《肖申克的救赎》",
+                "finished_num":34, 
+                "flagger_progress":"359/360", 
+                "finished_avatar_url":["url1","url2","url3","url4","url5"] 
+            },
+            {
+                "fid": 124, 
+                "flagger_title":"title",
+                "finished_num":4, 
+                "flagger_progress":"1/7", 
+                "finished_avatar_url":["url1","url2"] 
+            },
+        ],
     },
     makeFlag: function(){
         wx.navigateTo({
@@ -15,7 +47,7 @@ Page({
     },
     foldFun:function(){
         this.setData({
-            fold: !this.data.fold
+            isFold: !this.data.isFold
         })
     },
     /**

@@ -6,28 +6,24 @@
     </view>
 </view>
 <view hidden="{{false}}" style="padding-top:{{statusBarHeight}}px">
-    <view class="doing">
-        <my-flag></my-flag>
-        <my-flag></my-flag>
-        <my-flag></my-flag>
-        <my-flag></my-flag>
-        <my-flag></my-flag>
-        <my-flag></my-flag>
-        <my-flag></my-flag>
-        <my-flag></my-flag>
-        <my-flag></my-flag>
-    </view>
-    <view class="done">
-        <view class="foldBox"><text style="color: #000;">已完成</text><image src="{{fold?'/icons/unfold.png':'/icons/fold.png'}}" class="foldImg" bindtap="foldFun"></image></view>
-        <view class="doneList">
-            <my-flag flagIsDone="true"></my-flag>
-            <view class="folder">
-                <view></view>
-                <view></view>
-                <view></view>
+    <block hidden="{{false}}">
+        <view class="doing">
+            <my-flag wx:for="{{flagObjArr}}" flagObj="{{flagObjArr[index]}}" wx:key="{{flagObjArr[index].fid}}"></my-flag>
+        </view>
+    </block>
+    <block hidden="{{false}}">
+        <view class="done">
+            <view class="foldBox"><text style="color: #000;">已完成</text><image src="{{isFold?'/icons/unfold.png':'/icons/fold.png'}}" class="foldImg" bindtap="foldFun"></image></view>
+            <view class="doneList">
+                <my-flag flagIsDone="true"  wx:for="{{isFold?[doneFlagObjArr[0]]:doneFlagObjArr}}" flagObj="{{doneFlagObjArr[index]}}" wx:key="{{doneFlagObjArr[index].fid}}"></my-flag>
+                <view class="folder" hidden="{{!isFold}}">
+                    <view></view>
+                    <view></view>
+                    <view></view>
+                </view>
             </view>
         </view>
-    </view>
+    </block>
 </view>
 
 <view hidden="{{true}}" class="nothing">
