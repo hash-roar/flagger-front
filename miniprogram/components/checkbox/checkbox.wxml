@@ -1,4 +1,4 @@
 <!--components/checkbox/checkbox.wxml-->
 <view class="checkbox-group" >
-    <view class="checkbox {{item.checked?'checkbox-active':''}}" wx:for="{{arr}}" data-index="{{index}}"   data-value="{{item.value}}" catchtap="checkboxFun">{{item.value}} </view>
+    <view class="checkbox {{item.checked?'checkbox-active':''}}" wx:for="{{arr}}" data-index="{{index}}" wx:key="index"  data-value="{{item.value}}" catchtap="checkboxFun">{{item.value}} </view>
 </view>

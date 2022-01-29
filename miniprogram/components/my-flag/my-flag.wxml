@@ -2,7 +2,7 @@
 <view class="flagBox" catchtap="flagDetailFun">
     <text class="flagContent">{{flagObj.flagger_title}}</text>
     <view class="memNum">
-        <image class="headImg" wx:for="{{flagObj.finished_avatar_url}}" wx:key="{{index}}" style="transform: translateX({{(-50*index-50)+'%'}});background-color: red;"></image>
+        <image class="headImg" wx:for="{{flagObj.finished_avatar_url}}" wx:key="index" style="transform: translateX({{(-50*index-50)+'%'}});background-color: red;"></image>
         <view class="number" style="display: {{flagObj.finished_num>5?'inline-block':'none'}};">{{flagObj.finished_num}}</view>
         <text class="text">今日已打卡</text>
     </view>
