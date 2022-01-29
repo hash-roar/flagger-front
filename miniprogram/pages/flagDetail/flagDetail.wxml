@@ -1,13 +1,11 @@
 <!--pages/historyDetail/historyDetail.wxml-->
 <view class="notice-title">公告</view>
-<notice class="notice-content" text="{{flagInfo.announcement}}"></notice>
+<notice class="notice-content" innerText="{{flagInfo.announcement}}"></notice>
 <view class="card-count">打卡次数</view>
-<singleCard class="the-card"></singleCard>
-<memberCard class="the-card"></memberCard>
-<memberCard class="the-card"></memberCard>
-<memberCard class="the-card"></memberCard>
+<memberCard class="the-card" wx:for="{{flagInfo.flagger_member}}" member="{{flagInfo.flagger_member[index]}}" wx:key="index" index="{{index+1}}" should_flag_sum="{{flagInfo.should_flag_sum}}"></memberCard>
 <!-- <if-join></if-join> -->
 <!-- <tag class="click-to-punch"></tag> -->
+<view class="clickOn" bindtap="clickOnFun" style="background-color: {{hasClickOn?'#c2c2c2':'#ffe768'}};">打卡</view>
 
 <button class="giveUpFlag" style="width: 702rpx;background-color: #fff;color: #ff7566;margin-top: 40rpx;" bindtap="giveUpFlagFun" hidden="{{!isJoined}}">放弃</button>
 <button class="joinFlag" style="width: 702rpx;background-color: #ffe768;color: #000;margin-top: 40rpx;" bindtap="joinFlagFun" hidden="{{isJoined}}">加入</button>

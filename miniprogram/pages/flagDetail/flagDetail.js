@@ -8,8 +8,46 @@ Page({
         isJoined: false,
         hideGiveUp: true,
         hideGiveUpMsg: true,
+        hasClickOn: false,
+        flagInfo:{    
+            "fid":123,  
+            "flagger_title":"string",
+            "tag_title":"string",
+            "announcement":"string",
+            "is_member":true, 
+            "should_flag_sum":13 ,
+            "flagger_member":[
+                {
+                    "uid":234, 
+                    "avatar_url":"https://efewcwfef", 
+                    "nickname":"name", 
+                    "is_admin":false, 
+                    "flag_sum":134,
+                    "user_intre_tag":["tag1","tag2"], 
+                    "sequential_flag_time": 3 
+                },
+                {
+                    "uid":234, 
+                    "avatar_url":"https://efewcwfef", 
+                    "nickname":"name", 
+                    "is_admin":true, 
+                    "flag_sum":134,
+                    "user_intre_tag":["tag1","tag2"], 
+                    "sequential_flag_time": 3 
+                },
+                {
+                    "uid":234, 
+                    "avatar_url":"https://efewcwfef", 
+                    "nickname":"name", 
+                    "is_admin":false, 
+                    "flag_sum":134,
+                    "user_intre_tag":["tag1","tag2"], 
+                    "sequential_flag_time": 3 
+                },
+                
+            ]
         
-
+        }
     },
     joinFlagFun:function(){
         this.setData({
@@ -41,11 +79,23 @@ Page({
             hideGiveUpMsg: !this.data.hideGiveUpMsg
         })
     },
+    clickOnFun:function(){
+        if(!this.data.hasClickOn){
+            wx.showToast({
+                title: '打卡成功',
+            })
+        }
+        this.setData({
+            hasClickOn:true
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.setData({
+            isJoined: this.data.flagInfo.is_member
+        })
     },
 
     /**
@@ -59,14 +109,14 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        
     },
 
     /**
      * 生命周期函数--监听页面隐藏
      */
     onHide: function () {
-
+        
     },
 
     /**

@@ -24,6 +24,20 @@ page{
     right: 60rpx;
     bottom: 200rpx;
 }
+
+.clickOn{
+    position: fixed;
+    bottom: 450rpx;
+    right: 50rpx;
+    width: 120rpx;
+    height: 60rpx;
+    text-align: center;
+    line-height: 60rpx;
+    background-color: #ffe768;
+    color: #000;
+    border-radius: 30rpx;
+}
+
 .joinFlag,
 .giveUpFlag{
     border-radius: 20rpx;
