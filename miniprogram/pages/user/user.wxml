@@ -1,5 +1,5 @@
 <view class="userBox">
-    <image src="../../images/default-portrait.png" class="portraitBox"></image>
+    <image src="{{imageURLOne}}" class="portraitBox"></image>
     <view class="userNameBox">
         <view class="userName">{{nickName.value}}</view>
         <navigator url="/pages/modifyData/modifyData" class="iconfont icon-edit"></navigator>
@@ -8,7 +8,7 @@
     
 <view class="tagBox">
     <yellowBack class="yellow-back-honor"></yellowBack>
-</view>
+</view> 
 
     <complete></complete> 
     <myProgress></myProgress>
