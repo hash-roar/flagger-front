@@ -11,6 +11,8 @@ App({
 
     this.globalData = {
       userUID:0,
+      imageURL: "../../images/default-portrait.png",
+      ifIsVistor:"true",
       firstLogData: {
         sex:0,
         grade:0, 
