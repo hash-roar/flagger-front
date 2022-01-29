@@ -15,6 +15,26 @@ Page({
     },
     next6Fun:function(){
         app.firstLogData.socialtendency=this.data.socialtendency
+        const token=wx.getStorageSync('token')
+        const p = wx.cloud.callContainer({
+            config: {
+              env: 'prod-6gbc6i9v491283c0', 
+            },
+            path: '/addinfo', 
+            method: 'POST', 
+            data:app.firstLogData,
+            header: {
+                'authentication':token,
+                'X-WX-SERVICE': 'flagger',
+                "content-type": "application/x-www-form-urlencoded"
+            },
+            success:(res)=>{
+                console.log(res.data);
+            },
+            fail:(res)=>{
+                console.log(res);
+            }
+        });
     },
     skipFun:function(){
         app.firstLogData.socialtendency=0

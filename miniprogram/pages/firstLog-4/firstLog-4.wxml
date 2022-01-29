@@ -3,12 +3,12 @@
 <view class="askInterest">请选择你感兴趣的<text style="font-weight: bold;">flag</text></view>
 <scroll-view class="chooseInterest" scroll-x="true" style="width: 100%;">
     <checkbox-group class="selectFlag" bindchange="selectFlagFun">
-        <checkbox class="chooseFlag1" value="1"><view class="flagType1"><text>健身</text></view></checkbox>
-        <checkbox class="chooseFlag2" value="1"><view class="flagType2"><text>阅读</text></view></checkbox>
-        <checkbox class="chooseFlag3" value="1"><view class="flagType3"><text>学习</text></view></checkbox>
-        <checkbox class="chooseFlag4" value="1"><view class="flagType4"><text>减脂</text></view></checkbox>
-        <checkbox class="chooseFlag5" value="1"><view class="flagType5"><text>游玩</text></view></checkbox>
-        <checkbox class="chooseFlag6" value="1"><view class="flagType6"><text>科幻小说</text></view></checkbox>
+        <checkbox class="chooseFlag1" value="健身"><view class="flagType1"><text>健身</text></view></checkbox>
+        <checkbox class="chooseFlag2" value="阅读"><view class="flagType2"><text>阅读</text></view></checkbox>
+        <checkbox class="chooseFlag3" value="学习"><view class="flagType3"><text>学习</text></view></checkbox>
+        <checkbox class="chooseFlag4" value="减脂"><view class="flagType4"><text>减脂</text></view></checkbox>
+        <checkbox class="chooseFlag5" value="游玩"><view class="flagType5"><text>游玩</text></view></checkbox>
+        <checkbox class="chooseFlag6" value="科幻小说"><view class="flagType6"><text>科幻小说</text></view></checkbox>
         <checkbox class="chooseFlag7" disabled="true"><view class="flagType7"><text>……</text></view></checkbox>
         <checkbox class="chooseFlag8" disabled="true"><view class="flagType8"><text></text></view></checkbox>
         <checkbox class="ckbox addOwnFlag" bindtap="inputFlagFun" value="{{addOwnFlag}}" checked="{{isChecked}}"><view class="addFlagType"><text>{{addOwnFlag}}</text></view></checkbox>

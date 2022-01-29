@@ -7,12 +7,12 @@
 </view>
 <view hidden="{{false}}" style="padding-top:{{statusBarHeight}}px">
     <view class="doing">
-        <my-flag wx:for="{{flagObjArr}}" flagObj="{{flagObjArr[index]}}" wx:key="{{flagObjArr[index].fid}}"></my-flag>
+        <my-flag wx:for="{{flagObjArr}}" flagObj="{{flagObjArr[index]}}" wx:key="index"></my-flag>
     </view>
     <view class="done" style="display: {{doneFlagObjArr.length?'flex':'none'}};">
         <view class="foldBox"><text style="color: #000;">已完成</text><image src="{{isFold?'/icons/unfold.png':'/icons/fold.png'}}" class="foldImg" bindtap="foldFun"></image></view>
         <view class="doneList">
-            <my-flag flagIsDone="true"  wx:for="{{isFold?[doneFlagObjArr[0]]:doneFlagObjArr}}" flagObj="{{doneFlagObjArr[index]}}" wx:key="{{doneFlagObjArr[index].fid}}"></my-flag>
+            <my-flag flagIsDone="true"  wx:for="{{isFold?[doneFlagObjArr[0]]:doneFlagObjArr}}" flagObj="{{doneFlagObjArr[index]}}" wx:key="index"></my-flag>
             <view class="folder" hidden="{{!isFold}}">
                 <view></view>
                 <view></view>
@@ -22,7 +22,7 @@
     </view>
 </view>
 
-<view hidden="{{flagObjArr.length||doneFlagObjArr.length}}" class="nothing">
+<view hidden="{{flagObjArr.length||doneFlagObjArr.length||!true}}" class="nothing">
     <view>您还没有进行中的Flag噢</view>
     <view>快去加入或者创建一个吧</view>
 </view>

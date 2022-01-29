@@ -252,20 +252,7 @@ Page({
     skipFun:function(){
         app.firstLogData.major=0
     },
-    // 请求推送flag
-    // next3Fun:function(){
-    //     const res = await wx.cloud.callContainer({
-    //         config: {
-    //           env: '填入云环境ID',
-    //         },
-    //         path: '/postapi', // 填入业务自定义路径和参数，根目录，就是 / 
-    //         method: 'GET', // 按照自己的业务开发，选择对应的方法
-    //         header: {
-    //           'X-WX-SERVICE': 'xxx', // xxx中填入服务名称（微信云托管 - 服务管理 - 服务列表 - 服务名称）
-    //         }
-    //       });
-    //       console.log(res);
-    // },
+    
     /**
      * 生命周期函数--监听页面加载
      */

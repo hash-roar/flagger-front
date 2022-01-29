@@ -7,43 +7,26 @@ Page({
     data: {
         statusBarHeight: wx.getSystemInfoSync()['statusBarHeight'],
         isFold: true,
+        num:34,
         flagObjArr:[
-            {
-                "fid": 123, 
-                "flagger_title":"阅读《肖申克的救赎》",
-                "finished_num":34, 
-                "flagger_progress":"23/180", 
-                "finished_avatar_url":["url1","url2","url3","url4","url5"] 
-            },
-            {
-                "fid": 124, 
-                "flagger_title":"title",
-                "finished_num":4, 
-                "flagger_progress":"9/30", 
-                "finished_avatar_url":["url1","url2"] 
-            },
+            
         ],
         doneFlagObjArr:[
-            {
-                "fid": 123, 
-                "flagger_title":"阅读《肖申克的救赎》",
-                "finished_num":34, 
-                "flagger_progress":"359/360", 
-                "finished_avatar_url":["url1","url2","url3","url4","url5"] 
-            },
-            {
-                "fid": 124, 
-                "flagger_title":"title",
-                "finished_num":4, 
-                "flagger_progress":"1/7", 
-                "finished_avatar_url":["url1","url2"] 
-            },
+            
         ],
     },
     makeFlag: function(){
-        wx.navigateTo({
-          url: '/pages/makeFlag/makeFlag',
-        })
+        if(true){
+            wx.navigateTo({
+                url: '/pages/makeFlag/makeFlag',
+            })
+        }
+        else{
+            wx.showToast({
+              title: '请先登录',
+              icon: 'error'
+            })
+        }
     },
     foldFun:function(){
         this.setData({
@@ -68,7 +51,67 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        //这里要写请求，再setData
+        const token=wx.getStorageSync('token')
+        const p = wx.cloud.callContainer({
+            config: {
+              env: 'prod-6gbc6i9v491283c0', 
+            },
+            path: '/get-doing-flag', 
+            method: 'GET',
+            header: {
+                'authentication':token,
+                'X-WX-SERVICE': 'flagger',
+                "content-type": "application/json"
+            },
+            complete:(res)=>{
+                if(res.data.error){
+                    wx.showToast({
+                      title: res.data.error,
+                      icon: 'error'
+                    })
+                }
+                else{
+                    this.setData({
+                        flagObjArr:res.data
+                    })
+                }
+            }
+        });
+        this.setData({
+            // flagObjArr:[
+            //     {
+            //         "fid": 123, 
+            //         "flagger_title":"阅读《肖申克的救赎》",
+            //         "finished_num":34, 
+            //         "flagger_progress":"23/180", 
+            //         "finished_avatar_url":["url1","url2","url3","url4","url5"] 
+            //     },
+            //     {
+            //         "fid": 124, 
+            //         "flagger_title":"title",
+            //         "finished_num":4, 
+            //         "flagger_progress":"9/30", 
+            //         "finished_avatar_url":["url1","url2"] 
+            //     },
+            // ],
+            // doneFlagObjArr:[
+            //     {
+            //         "fid": 123, 
+            //         "flagger_title":"阅读《肖申克的救赎》",
+            //         "finished_num":34, 
+            //         "flagger_progress":"359/360", 
+            //         "finished_avatar_url":["url1","url2","url3","url4","url5"] 
+            //     },
+            //     {
+            //         "fid": 124, 
+            //         "flagger_title":"title",
+            //         "finished_num":4, 
+            //         "flagger_progress":"1/7", 
+            //         "finished_avatar_url":["url1","url2"] 
+            //     },
+            // ],
+        })
     },
 
     /**

@@ -1,10 +1,11 @@
 <!--pages/logIn/logIn.wxml-->
-<view class="welcome">
+<view class="topBar" style="padding-top:{{statusBarHeight}}px"></view>
+<view class="welcome" style="margin-top:97px">
     <view>你好，</view>
     <text>欢迎来到华中大<text style="font-weight: bolder;">Flagger</text>，</text>
     <view>请填写你的学号</view>
 </view>
-<form class="logInForm">
+<form class="logInForm" style="margin-top:97px">
     <view class="studentID"><input style="width: 100%;" type="text" name="" id="" placeholder="学号" bindinput="inputID"/></view>
     <button class="studentLog" style="height: 82rpx;width: 562rpx;" bindtap="studentLogFun" disabled="{{loginBtnDisable}}">确定</button>
 </form>
