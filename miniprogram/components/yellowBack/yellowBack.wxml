@@ -1,4 +1,4 @@
 
 <view class="tagFather">
-            {{innerText}}
+            {{innerText.value}}
 </view>
