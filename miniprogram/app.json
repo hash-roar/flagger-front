@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/modifyData/modifyData",
     "pages/user/user",
+    "pages/modifyData/modifyData",
     "pages/modulePage/modulePage",
     "pages/flagDetail/flagDetail",
     "pages/history/history",
