@@ -14,10 +14,10 @@ Page({
         })
     },
     next5Fun:function(){
-        app.firstLogData.environment=this.data.environment
+        app.globalData.firstLogData.environment=this.data.environment
     }, 
     skipFun:function(){
-        app.firstLogData.environment=0
+        app.globalData.firstLogData.environment=0
     },
     /**
      * 生命周期函数--监听页面加载

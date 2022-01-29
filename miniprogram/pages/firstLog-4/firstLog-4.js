@@ -56,16 +56,16 @@ Page({
     },
     next4Fun:function(){
         if(this.data.isChecked&&this.data.addOwnFlag!=='自定义'){
-            app.firstLogData.createstag=this.data.addOwnFlag
+            app.globalData.firstLogData.createstag=this.data.addOwnFlag
         }
         else{
-            app.firstLogData.createstag=""
+            app.globalData.firstLogData.createstag=""
         }
-        app.firstLogData.interestedtag=this.data.interestedtag
+        app.globalData.firstLogData.interestedtag=this.data.interestedtag
     },
     skipFun:function(){
-        app.firstLogData.createstag=""
-        app.firstLogData.interestedtag=[]
+        app.globalData.firstLogData.createstag=""
+        app.globalData.firstLogData.interestedtag=[]
     },
     /**
      * 生命周期函数--监听页面加载

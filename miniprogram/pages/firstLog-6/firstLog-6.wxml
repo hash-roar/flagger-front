@@ -1,7 +1,7 @@
 <!--pages/firstLog-6/firstLog-6.wxml-->
 <navigator class="skip" open-type="switchTab" url="/pages/index/index" bindtap="skipFun">跳过</navigator>
 <view class="askSoc">你的社交程度是？</view>
-<radio-group class="selectSoc">
+<radio-group class="selectSoc" bindchange="radioFun">
     <radio value="1"></radio>
     <radio value="2"></radio>
     <radio value="3"></radio>

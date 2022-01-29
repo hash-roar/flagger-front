@@ -25,10 +25,10 @@ Page({
         })
     },
     next2Fun:function(){
-        app.firstLogData.grade=parseInt(this.data.tempGrade[this.data.index].id)
+        app.globalData.firstLogData.grade=parseInt(this.data.tempGrade[this.data.index].id)
     },
     skipFun:function(){
-        app.firstLogData.grade=0
+        app.globalData.firstLogData.grade=0
     },
     /**
      * 生命周期函数--监听页面加载

@@ -247,10 +247,10 @@ Page({
         })
     },
     next3Fun:function(){
-        app.firstLogData.major=parseInt(this.data.tempMajor[this.data.index].id)
+        app.globalData.firstLogData.major=parseInt(this.data.tempMajor[this.data.index].id)
     },
     skipFun:function(){
-        app.firstLogData.major=0
+        app.globalData.firstLogData.major=0
     },
     
     /**

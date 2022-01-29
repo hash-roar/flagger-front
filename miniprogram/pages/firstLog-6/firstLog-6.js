@@ -14,7 +14,37 @@ Page({
         })
     },
     next6Fun:function(){
-        app.firstLogData.socialtendency=this.data.socialtendency
+        app.globalData.firstLogData.socialtendency=this.data.socialtendency
+        const token=wx.getStorageSync('token')
+        const p = wx.cloud.callContainer({
+            config: {
+              env: 'prod-6gbc6i9v491283c0', 
+            },
+            path: '/addinfo',
+            method: 'POST', 
+            data:app.globalData.firstLogData,
+            header: {
+                'authentication':token,
+                'X-WX-SERVICE': 'flagger',
+                "content-type": "application/json"
+            },
+            complete:(res)=>{
+                if(res.statusCode===200){
+                    wx.showToast({
+                      title: res.data.message,
+                    })
+                }
+                else{
+                    wx.showToast({
+                        title: res.data.error,
+                        icon: 'error'
+                    })
+                }
+            }
+        });
+    },
+    skipFun:function(){
+        app.globalData.firstLogData.socialtendency=0
         const token=wx.getStorageSync('token')
         const p = wx.cloud.callContainer({
             config: {
@@ -22,23 +52,26 @@ Page({
             },
             path: '/addinfo', 
             method: 'POST', 
-            data:app.firstLogData,
+            data:app.globalData.firstLogData,
             header: {
                 'authentication':token,
                 'X-WX-SERVICE': 'flagger',
-                "content-type": "application/x-www-form-urlencoded"
+                "content-type": "application/json"
             },
-            success:(res)=>{
-                console.log(res.data);
-            },
-            fail:(res)=>{
-                console.log(res);
+            complete:(res)=>{
+                if(res.statusCode===200){
+                    wx.showToast({
+                      title: res.data.message,
+                    })
+                }
+                else{
+                    wx.showToast({
+                        title: res.data.error,
+                        icon: 'error'
+                    })
+                }
             }
         });
-    },
-    skipFun:function(){
-        app.firstLogData.socialtendency=0
-        console.log(app.firstLogData);
     },
     /**
      * 生命周期函数--监听页面加载

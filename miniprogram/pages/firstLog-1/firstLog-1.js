@@ -12,13 +12,13 @@ Page({
         this.setData({
             sex:parseInt(e.detail.value)
         })
-        // app.firstLogData.sex=;
+        // app.globalData.firstLogData.sex=;
     },
     next1Fun:function(){
-        app.firstLogData.sex=this.data.sex
+        app.globalData.firstLogData.sex=this.data.sex
     },
     skipFun:function(){
-        app.firstLogData.sex=0
+        app.globalData.firstLogData.sex=0
     },
     /**
      * 生命周期函数--监听页面加载

@@ -14,6 +14,7 @@ Page({
         userAvatarUrl:"../../images/default-portrait.png"
     },
     PostStudentIDFun:function(){
+        const token=wx.getStorageSync('token')
         wx.cloud.callContainer({
             config: {
               env: 'prod-6gbc6i9v491283c0', 
@@ -23,14 +24,16 @@ Page({
             data:{
                 "student_id":this.data.studentID,
                 "password":"",
+                "avatar_url":this.data.avatar_url,
+                "nickname":this.data.nickName
             },
             header: {
                 'authentication':token,
                 'X-WX-SERVICE': 'flagger',
-                "content-type": "application/x-www-form-urlencoded"
+                "content-type": "application/json"
             },
             complete:(res)=>{
-                if(res.data.message){
+                if(res.statusCode===200){
                     wx.showToast({
                       title: res.data.message,
                     })
@@ -49,14 +52,14 @@ Page({
     },
     studentLogFun:function(){
         // app.firstLogData.student_id=this.data.studentID 直接post学号
-        const token=wx.getStorageSync('token')
         
         wx.getUserProfile({
           desc: '请求获取您的头像、昵称',
           success:(res)=>{
+            //   console.log(res.userInfo);
               this.setData({
                   userNickName:res.userInfo.nickName,
-                  userAvatarUrl:res.userInfo.userAvatarUrl
+                  userAvatarUrl:res.userInfo.avatarUrl
               })
               
               this.PostStudentIDFun();

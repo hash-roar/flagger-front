@@ -7,7 +7,6 @@ Page({
     data: {
         statusBarHeight: wx.getSystemInfoSync()['statusBarHeight'],
         isFold: true,
-        num:34,
         flagObjArr:[
             
         ],
@@ -53,6 +52,7 @@ Page({
     onShow: function () {
         //这里要写请求，再setData
         const token=wx.getStorageSync('token')
+        console.log(token);
         const p = wx.cloud.callContainer({
             config: {
               env: 'prod-6gbc6i9v491283c0', 
@@ -65,55 +65,45 @@ Page({
                 "content-type": "application/json"
             },
             complete:(res)=>{
-                if(res.data.error){
-                    wx.showToast({
-                      title: res.data.error,
-                      icon: 'error'
-                    })
-                }
-                else{
+                if(res.data){
                     this.setData({
                         flagObjArr:res.data
                     })
                 }
+                // else{
+                //     this.setData({
+                //         flagObjArr:res.data
+                //     })
+                // }
             }
         });
-        this.setData({
-            // flagObjArr:[
-            //     {
-            //         "fid": 123, 
-            //         "flagger_title":"阅读《肖申克的救赎》",
-            //         "finished_num":34, 
-            //         "flagger_progress":"23/180", 
-            //         "finished_avatar_url":["url1","url2","url3","url4","url5"] 
-            //     },
-            //     {
-            //         "fid": 124, 
-            //         "flagger_title":"title",
-            //         "finished_num":4, 
-            //         "flagger_progress":"9/30", 
-            //         "finished_avatar_url":["url1","url2"] 
-            //     },
-            // ],
-            // doneFlagObjArr:[
-            //     {
-            //         "fid": 123, 
-            //         "flagger_title":"阅读《肖申克的救赎》",
-            //         "finished_num":34, 
-            //         "flagger_progress":"359/360", 
-            //         "finished_avatar_url":["url1","url2","url3","url4","url5"] 
-            //     },
-            //     {
-            //         "fid": 124, 
-            //         "flagger_title":"title",
-            //         "finished_num":4, 
-            //         "flagger_progress":"1/7", 
-            //         "finished_avatar_url":["url1","url2"] 
-            //     },
-            // ],
-        })
+        const q = wx.cloud.callContainer({
+            config: {
+              env: 'prod-6gbc6i9v491283c0', 
+            },
+            path: '/get-finished-flag', 
+            method: 'GET',
+            header: {
+                'authentication':token,
+                'X-WX-SERVICE': 'flagger',
+                "content-type": "application/json"
+            },
+            complete:(res)=>{
+                console.log(res);
+                if(res.statusCode===200){
+                    this.setData({
+                        doneFlagObjArr:res.data
+                    })
+                }
+                else{
+                    wx.showToast({
+                        title: res.data.error,
+                        icon: 'error'
+                    })
+                }
+            }
+        });
     },
-
     /**
      * 生命周期函数--监听页面隐藏
      */
