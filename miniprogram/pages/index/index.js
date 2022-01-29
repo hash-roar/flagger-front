@@ -1,4 +1,5 @@
 // pages/index/index.js
+const app=getApp()
 Page({
 
     /**
@@ -15,7 +16,7 @@ Page({
         ],
     },
     makeFlag: function(){
-        if(true){
+        if(!app.globalData.ifIsVistor){
             wx.navigateTo({
                 url: '/pages/makeFlag/makeFlag',
             })
@@ -51,58 +52,67 @@ Page({
      */
     onShow: function () {
         //这里要写请求，再setData
-        const token=wx.getStorageSync('token')
-        console.log(token);
-        const p = wx.cloud.callContainer({
-            config: {
-              env: 'prod-6gbc6i9v491283c0', 
-            },
-            path: '/get-doing-flag', 
-            method: 'GET',
-            header: {
-                'authentication':token,
-                'X-WX-SERVICE': 'flagger',
-                "content-type": "application/json"
-            },
-            complete:(res)=>{
-                if(res.data){
-                    this.setData({
-                        flagObjArr:res.data
-                    })
+        if(!app.globalData.ifIsVistor){
+            const token=wx.getStorageSync('token')
+            console.log(token);
+            const p = wx.cloud.callContainer({
+                config: {
+                env: 'prod-6gbc6i9v491283c0', 
+                },
+                path: '/get-doing-flag', 
+                method: 'GET',
+                header: {
+                    'authentication':token,
+                    'X-WX-SERVICE': 'flagger',
+                    "content-type": "application/json"
+                },
+                complete:(res)=>{
+                    if(res.statusCode===200){
+                        this.setData({
+                            flagObjArr:res.data
+                        })
+                    }
+                    else{
+                        wx.showToast({
+                            title: '请求失败',
+                            icon: 'error'
+                        })
+                    }
                 }
-                // else{
-                //     this.setData({
-                //         flagObjArr:res.data
-                //     })
-                // }
-            }
-        });
-        const q = wx.cloud.callContainer({
-            config: {
-              env: 'prod-6gbc6i9v491283c0', 
-            },
-            path: '/get-finished-flag', 
-            method: 'GET',
-            header: {
-                'authentication':token,
-                'X-WX-SERVICE': 'flagger',
-                "content-type": "application/json"
-            },
-            complete:(res)=>{
-                console.log(res);
-                if(res.statusCode===200){
-                    this.setData({
-                        doneFlagObjArr:res.data
-                    })
+            });
+            const q = wx.cloud.callContainer({
+                config: {
+                env: 'prod-6gbc6i9v491283c0', 
+                },
+                path: '/get-finished-flag', 
+                method: 'GET',
+                header: {
+                    'authentication':token,
+                    'X-WX-SERVICE': 'flagger',
+                    "content-type": "application/json"
+                },
+                complete:(res)=>{
+                    console.log(res);
+                    if(res.statusCode===200){
+                        this.setData({
+                            doneFlagObjArr:res.data
+                        })
+                    }
+                    else{
+                        wx.showToast({
+                            title: '请求失败',
+                            icon: 'error'
+                        })
+                    }
                 }
-                else{
-                    wx.showToast({
-                        title: res.data.error,
-                        icon: 'error'
-                    })
-                }
-            }
-        });
+            });
+        }
+        else{
+            wx.showToast({
+                title: '请登录',
+                icon: 'error'
+            })
+        }
     },
     /**
      * 生命周期函数--监听页面隐藏

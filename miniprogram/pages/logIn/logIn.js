@@ -50,6 +50,35 @@ Page({
             }
         });
     },
+    deleteUserFun:function(){
+        const token=wx.getStorageSync('token')
+        const p = wx.cloud.callContainer({
+            config: {
+            env: 'prod-6gbc6i9v491283c0', 
+            },
+            path: '/delete-user',
+            method: 'GET', 
+            header: {
+                'authentication':token,
+                'X-WX-SERVICE': 'flagger',
+                "content-type": "application/json"
+            },
+            success:(res)=>{
+                if(res.statusCode===200){
+                    console.log(res);
+                }
+                else{
+                    wx.showToast({
+                        title: res.data.error,
+                        icon: 'error'
+                    })
+                }
+            },
+            fail:(res)=>{
+                console.log(res);
+            }
+        });
+    },
     studentLogFun:function(){
         // app.firstLogData.student_id=this.data.studentID 直接post学号
         
@@ -69,11 +98,13 @@ Page({
                 title: '授权失败',
                 icon: 'error'
               })
+              this.deleteUserFun()
+              app.globalData.ifIsVistor=true
+              wx.switchTab({
+                url: '/pages/index/index',
+              })
           }
         })
-
-        
-        
     },
     inputID:function(e){
         const checkID=/^[A-Z]\d{9}/

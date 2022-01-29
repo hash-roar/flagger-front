@@ -21,7 +21,7 @@ Page({
               env: 'prod-6gbc6i9v491283c0', 
             },
             path: '/addinfo',
-            method: 'POST', 
+            method: 'POST',
             data:app.globalData.firstLogData,
             header: {
                 'authentication':token,
@@ -45,6 +45,7 @@ Page({
     },
     skipFun:function(){
         app.globalData.firstLogData.socialtendency=0
+        console.log(app.globalData.firstLogData);
         const token=wx.getStorageSync('token')
         const p = wx.cloud.callContainer({
             config: {
@@ -59,6 +60,7 @@ Page({
                 "content-type": "application/json"
             },
             complete:(res)=>{
+                console.log(res);
                 if(res.statusCode===200){
                     wx.showToast({
                       title: res.data.message,

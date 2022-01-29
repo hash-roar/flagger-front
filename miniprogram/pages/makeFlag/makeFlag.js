@@ -96,7 +96,6 @@ Page({
         })
     },
     gradeResultFun:function(e){
-        console.log(e.detail);
         let items=e.detail;
         let arr=[]
         for(let i=0;i<items.length;i++){
@@ -109,23 +108,52 @@ Page({
         })
     },
     fqcResultFun:function(e){
-        console.log(e.detail);
         this.setData({
             frequency:parseInt(e.detail.id)
         })
     },
     confirmFun:function(){
-        // app.makeFlagData.title=this.data.title;  直接post
-        // app.makeFlagData.tag=this.data.tag;
-        // app.makeFlagData.created_tag=this.data.created_tag;
-        // app.makeFlagData.max_group_member=this.data.max_group_member;
-        // app.makeFlagData.join_auth=this.data.join_auth;
-        // app.makeFlagData.end_time=this.data.end_time;
-        // app.makeFlagData.frequency=this.data.frequency;
-        // app.makeFlagData.announcement=this.data.announcement;
-        wx.switchTab({
-          url: '/pages/index/index',
-        })
+        console.log(this.data.end_time);
+        const token=wx.getStorageSync('token')
+        const p = wx.cloud.callContainer({
+            config: {
+              env: 'prod-6gbc6i9v491283c0', 
+            },
+            path: '/create-flag',
+            method: 'POST', 
+            data:{
+                'title':this.data.title,
+                'tag':this.data.tag,
+                'created_tag':this.data.created_tag,
+                'max_group_member':this.data.max_group_member,
+                'join_auth':this.data.join_auth,
+                'end_time':this.data.end_time,
+                'frequency':this.data.frequency,
+                'announcement':this.data.announcement,
+            },
+            header: {
+                'authentication':token,
+                'X-WX-SERVICE': 'flagger',
+                "content-type": "application/json"
+            },
+            complete:(res)=>{
+                console.log(res);
+                if(res.statusCode===200){
+                    wx.showToast({
+                      title: res.data.message,
+                    })
+                    wx.switchTab({
+                      url: '/pages/index/index',
+                    })
+                }
+                else{
+                    wx.showToast({
+                        title: res.data.error,
+                        icon: 'error'
+                    })
+                }
+            }
+        });
     },
     nameFun:function(e){
         this.setData({

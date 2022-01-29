@@ -2,7 +2,7 @@
 <view class="notice-title">公告</view>
 <notice class="notice-content" innerText="{{flagInfo.announcement}}"></notice>
 <view class="card-count">打卡次数</view>
-<memberCard class="the-card" wx:for="{{flagInfo.flagger_member}}" member="{{flagInfo.flagger_member[index]}}" wx:key="index" index="{{index+1}}" should_flag_sum="{{flagInfo.should_flag_sum}}"></memberCard>
+<memberCard class="the-card" wx:for="{{flagInfo.flagger_member}}" member="{{flagInfo.flagger_member[index]}}" wx:key="index" index="{{index+1}}" should_flag_sum="{{flagInfo.should_flag_sum}}" globalUid="{{uid}}"></memberCard>
 <!-- <if-join></if-join> -->
 <!-- <tag class="click-to-punch"></tag> -->
 <view class="clickOn" bindtap="clickOnFun" style="background-color: {{hasClickOn?'#c2c2c2':'#ffe768'}};">打卡</view>

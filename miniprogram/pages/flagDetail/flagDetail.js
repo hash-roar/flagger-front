@@ -1,4 +1,5 @@
 // pages/historyDetail/historyDetail.js
+const app=getApp()
 Page({
 
     /**
@@ -10,7 +11,8 @@ Page({
         hideGiveUpMsg: true,
         hasClickOn: true,     //默认已经打卡，打卡按钮不可用
         fid: -1,    
-        flagInfo:{}
+        uid: -1,
+        flagInfo:{},
     },
     joinFlagFun:function(){
         if(this.data.fid!==-1){
@@ -63,9 +65,6 @@ Page({
         })
     },
     confirmGiveUpFun:function(){
-        this.setData({
-            hideGiveUp: !this.data.hideGiveUp
-        })
         if(!this.data.hideGiveUp&&this.data.fid!==-1){
             const token=wx.getStorageSync('token')
             const p = wx.cloud.callContainer({
@@ -92,6 +91,10 @@ Page({
                                 isJoined: !this.data.isJoined
                             })
                         }
+                        
+                        this.setData({
+                            hideGiveUp: !this.data.hideGiveUp
+                        })
                         this.setData({
                             hideGiveUpMsg: !this.data.hideGiveUpMsg
                         })
@@ -101,12 +104,26 @@ Page({
                             title: '请求失败',
                             icon: 'error'
                         })
+                        this.setData({
+                            hideGiveUpMsg: !this.data.hideGiveUpMsg
+                        })
                     }
                 },
                 fail:(res)=>{
                     console.log(res);
+                    this.setData({
+                        hideGiveUpMsg: !this.data.hideGiveUpMsg
+                    })
                 }
             });
+        }
+        else{
+            this.setData({
+                hideGiveUpMsg: !this.data.hideGiveUpMsg
+            })
+            wx.navigateBack({
+              delta: 0,
+            })
         }
     },
     clickOnFun:function(){
@@ -164,16 +181,17 @@ Page({
     },
     onLoad: function (options) {
         this.setData({
-            fid: parseInt(options.fid)
+            fid: parseInt(options.fid),
+            uid: app.globalData.userUID
         })
-        console.log(this.data.fid)
+        console.log(this.data.uid)
         const token=wx.getStorageSync('token')
         const p = wx.cloud.callContainer({
             config: {
               env: 'prod-6gbc6i9v491283c0', 
             },
-            path: '/get-flags',
-            method: 'GET',
+            path: '/flaginfo',
+            method: 'POST',
             data:{
                 'fid':this.data.fid
             },
@@ -188,7 +206,6 @@ Page({
                     this.setData({
                         flagInfo:res.data,
                         isJoined: res.data.is_member,
-
                     })
                     this.flaggedTodayFun(res.data.flagger_member)
                 }
