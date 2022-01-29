@@ -1,0 +1,65 @@
+<!--pages/modifyData/modifyData.wxml-->
+<view class="user-data-box">
+    <view class="user-single-box">
+        <view class="data-portrait-box">
+            <image src="{{imageURLOne}}" class="modify-portrait">
+            </image>
+        </view>
+        <view class="data-username-box">
+            <input placeholder="用户名" class="input-username" value="{{innerTextOne.value}}" bindblur="saveModifyNickname"></input>
+        </view>
+    </view>
+
+    <!-- 学位年级专业选择 -->
+    <view class="user-single-box">
+        <view wx:for="{{innerTextTwo}}" wx:for-item="item" data-index="{{index}}" wx:key="id" class="{{innerTextTwo[index].flagClass}}">
+            <input placeholder="{{innerTextTwo[index].defaultValue}}" value="{{innerTextTwo[index].value}}" bindblur="saveModifyData" data-index="{{index}}"></input>
+        </view>
+    </view>
+
+
+    <!-- 倾向Flag、环境选择、社交程度 -->
+    <view class="user-single-box">
+        <view bindtap="choosePreferFlag" wx:for="{{innerTextThree}}" wx:for-item="item" data-index="{{index}}" wx:key="id" class="{{innerTextThree[index].flagClass}}">
+            <text>{{innerTextThree[index].value}}</text>
+            <view class="iconfont {{isTap[index].value?'icon-upArray':'icon-chooseUpfold'}}"></view>
+        </view>
+    </view>
+
+    <view class="prefer-detail prefer-flag-detail-one {{theTappedOne == 0 && isTap[theTappedOne].value === true ? 'can-display':'not-display'}}">
+        <userTag class="userTagChild" bindtap="choosePreferContent" wx:for="{{preferFlagTime}}" wx:for-item="item" data-index="{{index}}" wx:key="id">
+        </userTag>
+
+    </view>
+    <view class="prefer-detail prefer-flag-detail-two {{theTappedOne == 1 && isTap[theTappedOne].value === true ? 'can-display':'not-display'}}">
+        <radio-group class="selectEnv selectEnv-two" data-index="{{index}}">
+            <radio class="userTagChild" wx:for="{{radioTime}}" wx:for-item="item" data-index="{{index}}" wx:key="id" bindtap="handleTapOnEnvironmentRadio" checked="{{whichEnvironmentRadio - 1 === index ? 'true' : ''}}">
+            </radio>
+        </radio-group>
+        <view class="chooseEnv">
+            <view>室内</view>
+            <view>均可</view>
+            <view>室外</view>
+            <view>不确定</view>
+        </view>
+    </view>
+
+    <view class="prefer-detail prefer-flag-detail-three {{theTappedOne == 2 && isTap[theTappedOne].value === true ? 'can-display':'not-display'}}">
+        <radio-group class="selectEnv" data-index="{{index}}">
+            <radio class="userTagChild" wx:for="{{radioTime}}" wx:for-item="item" data-index="{{index}}" wx:key="id" bindtap="handleTapOnSocialRadio" checked="{{whichSocialRadio - 1 === index ? 'true' : ''}}">
+            </radio>
+        </radio-group>
+
+        <view class="chooseEnv">
+            <view>社交恐惧</view>
+            <view>三五知己</view>
+            <view>派对动物</view>
+            <view>社交达人</view>
+        </view>
+    </view>
+
+
+    <navigator url="/pages/user/user" open-type="switchTab" class="saveModifyData" bindtap="saveModifyData">保存</navigator>
+
+    <!-- <navigator open-type="switchTab" class="saveModifyData" bindtap="toSave">保存</navigator> -->
+</view>
