@@ -6,7 +6,7 @@ Page({
     complete: {
       type: Number,
       value: 1,
-    },
+    }, 
     nickName: {
       type: String,
       value: "用户名"
@@ -21,7 +21,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const notTheFirstTime = wx.cloud.callContainer({
+      config: {
+        env: 'prod-6gbc6i9v491283c0',
+      },
+      path: '/get-user-info',
+      method: 'GET',
+      header: {
+        'X-WX-SERVICE': 'flagger'
+      },
+      success: result=> {
+        //成功拿到数据以后用  用户昵称、头像、完成度、荣誉值 填充页面
+        console.log(result);
+        this.getUserInformation(result);
+      }
+    });
   },
 
   /**
@@ -67,12 +81,9 @@ Page({
           'X-WX-SERVICE': 'flagger'
         },
         success: function (result) {
-          console.log("1:ask If the first Time");
           if (result.data.is_registered) {
-            console.log("已经注册了，不是第一次登录");
             reject();
           } else {
-            console.log("没有注册，是第一次登录");
             resolve();
           }
         }
@@ -105,7 +116,6 @@ Page({
             app.globalData.ifIsVistor = false;
             console.log("登录成功");
             if (res.code) {
-              console.log(res);
               //发起网络请求
               resolve(res);
             }
@@ -125,21 +135,16 @@ Page({
         },
         success: function (result) {
           //成功拿到数据以后用  用户昵称、头像、完成度、荣誉值 填充页面
-          console.log("成功拿到数据以后用  用户昵称、头像、完成度、荣誉值 填充页面");
-          console.log(result);
           that.getUserInformation(result);
         }
       });
     })
     var p2 = p1.then((res) => {
       let loginData = res.code;
-      console.log("登录成功后getUserInfo");
       return new Promise((resolve, reject) => {
         wx.getUserInfo({
           desc: 'desc',
           success: function (res) {
-            console.log("getUserInfo成功");
-            console.log(res);
             resolve(loginData, res);
           },
           fail: function (reason) {
@@ -169,12 +174,8 @@ Page({
           },
           success: function (result) {
             if (result.statusCode == 200) {
-              console.log(result);
               app.globalData.userUID = result.data.uid;
-              console.log(app.globalData.userUID);
               wx.setStorageSync('token', result.data.token);
-              console.log(wx.getStorageSync('token'));
-              console.log("send code and getUserInfo successfully");
               wx.redirectTo({
                 url: '../logIn/logIn'
               })
@@ -191,8 +192,7 @@ Page({
 
   //登陆后请求获取用户数据
   getUserInformation: function (userInformation) {
-    console.log("填充用户数据啦");
-    console.log(userInformation.data);
+
     let res = userInformation.data;
     //获取用户信息，填充用户名
     if (res.nickname) {
@@ -205,11 +205,9 @@ Page({
     }
     //获取用户荣誉值渲染
     const yellowBackChild = this.selectAllComponents('.yellow-back-honor');
-    console.log(typeof res.credence_value);
     yellowBackChild[0].setData({
       "innerText.value": '荣誉' + res.credence_value.toString()
     })
-    console.log(yellowBackChild[0].data.innerText);
     //获取用户flag完成度渲染页面
     if (res.should_flag_sum) {
       let theCompleteRate = res.have_flaged / res.should_flag_sum;
@@ -224,7 +222,10 @@ Page({
       //登录修改用户头像
       app.globalData.imageURL = res.avatar_url;
     }
-
+    this.setData({
+      imageURLOne: app.globalData.imageURL
+    })
+    console.log(app.globalData.imageURL);
   },
 
   onReady: function () {
