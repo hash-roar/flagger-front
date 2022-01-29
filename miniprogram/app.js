@@ -11,15 +11,15 @@ App({
 
     this.globalData = {
       userUID:0,
+      firstLogData: {
+        sex:0,
+        grade:0, 
+        major:0,
+        interestedtag:[],
+        createstag:"",
+        environment:0,
+        socialtendency:0,
+      },
     };
-  },
-  firstLogData: {
-    sex:0,
-    grade:0, 
-    major:0,
-    interestedtag:[],
-    createstag:"",
-    environment:0,
-    socialtendency:0,
   },
 });
