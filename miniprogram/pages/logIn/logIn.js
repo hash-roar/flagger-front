@@ -10,6 +10,8 @@ Page({
         studentID: '',
         password: '',
         loginBtnDisable: true,
+        userNickName: "微信用户",
+        userAvatarUrl:"../../images/default-portrait.png"
     },
     PostStudentIDFun:function(){
         wx.cloud.callContainer({
@@ -48,12 +50,15 @@ Page({
     studentLogFun:function(){
         // app.firstLogData.student_id=this.data.studentID 直接post学号
         const token=wx.getStorageSync('token')
-        let wxuserInfo
+        
         wx.getUserProfile({
           desc: '请求获取您的头像、昵称',
           success:(res)=>{
-              console.log(res);
-              wxuserInfo=res.userInfo
+              this.setData({
+                  userNickName:res.userInfo.nickName,
+                  userAvatarUrl:res.userInfo.userAvatarUrl
+              })
+              
               this.PostStudentIDFun();
           },
           fail:(res)=>{
