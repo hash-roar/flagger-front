@@ -133,7 +133,7 @@ page{
     justify-content: center;
     grid-column-gap:20rpx;
     height: 150rpx;
-    bottom: 350rpx;
+    bottom: 320rpx;
     z-index: 10;
 }
 
