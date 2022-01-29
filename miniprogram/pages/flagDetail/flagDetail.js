@@ -56,7 +56,6 @@ Page({
                 icon: 'error'
             })
         }
-
     },
     giveUpFlagFun:function(){
         this.setData({
@@ -173,7 +172,7 @@ Page({
             config: {
               env: 'prod-6gbc6i9v491283c0', 
             },
-            path: '/flaginfo', 
+            path: '/get-flags',
             method: 'GET',
             data:{
                 'fid':this.data.fid
