@@ -1,10 +1,8 @@
 // pages/user/user.js
 var app = getApp();
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
+    imageURLOne:app.globalData.imageURL,
     complete: {
       type: Number,
       value: 1,
@@ -54,9 +52,11 @@ Page({
   },
   //点击“我的”触发登录
   onTabItemTap: function (item) {
+    var that = this;
     var p2;
     // 先判断一下是否是初次登陆
-    var p0 = new Promise((resolve,reject)=>{
+
+    var p = new Promise((resolve, reject) => {
       const ifTheFirstTime = wx.cloud.callContainer({
         config: {
           env: 'prod-6gbc6i9v491283c0',
@@ -66,22 +66,39 @@ Page({
         header: {
           'X-WX-SERVICE': 'flagger'
         },
-        success:function(result){
-          console.log(result);
+        success: function (result) {
           console.log("1:ask If the first Time");
-          if(result.is_registered == "true")
-          {
+          if (result.data.is_registered) {
+            console.log("已经注册了，不是第一次登录");
             reject();
-          }
-          else{
+          } else {
+            console.log("没有注册，是第一次登录");
             resolve();
           }
         }
       });
     })
-    
+    var p0 = p.then(()=>{
+      return new Promise((resolve, reject) => {
+        wx.showModal({
+          title: '提示',
+          content: '是否允许微信登陆',
+          success (res) {
+            if (res.confirm) {
+              console.log('用户点击确定');
+              resolve();
+            } else if (res.cancel) {
+              console.log('用户点击取消');
+              wx.switchTab({
+                url: '../index/index',
+              })
+            }
+          } 
+        })
+      })
+    });
 
-    var p1 = p0.then(()=>{
+    var p1 = p0.then(() => {
       return new Promise((resolve, reject) => {
         wx.login({
           success(res) {
@@ -94,10 +111,25 @@ Page({
           }
         })
       });
-    },()=>{
-      console.log("not the first time to Log");
+    }, () => {
+      console.log("not the first time, get user information to draw");
+      const notTheFirstTime = wx.cloud.callContainer({
+        config: {
+          env: 'prod-6gbc6i9v491283c0',
+        },
+        path: '/get-user-info',
+        method: 'GET',
+        header: {
+          'X-WX-SERVICE': 'flagger'
+        },
+        success: function (result) {
+          //成功拿到数据以后用  用户昵称、头像、完成度、荣誉值 填充页面
+          console.log("成功拿到数据以后用  用户昵称、头像、完成度、荣誉值 填充页面");
+          console.log(result);
+          that.getUserInformation(result);
+        }
+      });
     })
-
     var p2 = p1.then((res) => {
       let loginData = res.code;
       console.log("登录成功后getUserInfo");
@@ -112,31 +144,32 @@ Page({
           fail: function (reason) {
             console.log(reason);
           }
-        }) 
+        })
       })
-    },()=>{
+    }, () => {
       console.log("not the first time to Log");
     })
     var p3 = p2.then((loginData, avatar_url) => {
       return new Promise((resolve, reject) => {
+        console.log("发送用户相关数据到后台进行保存");
         const res = wx.cloud.callContainer({
           config: {
             env: 'prod-6gbc6i9v491283c0',
           },
-          data:{
-            code:loginData,
-            avatar_url:avatar_url,
+          data: {
+            code: loginData,
+            avatar_url: "",
+            nickname: "",
           },
           path: '/login',
           method: 'POST',
           header: {
             'X-WX-SERVICE': 'flagger'
           },
-          success:function(result){
-            if(result.statusCode == 200)
-            {
+          success: function (result) {
+            if (result.statusCode == 200) {
               console.log(result);
-              app.globalData.userUID= result.data.uid;
+              app.globalData.userUID = result.data.uid;
               console.log(app.globalData.userUID);
               wx.setStorageSync('token', result.data.token);
               console.log(wx.getStorageSync('token'));
@@ -148,50 +181,52 @@ Page({
           }
         });
       })
-    },()=>{
+    }, () => {
       console.log("not the first time to Log");
-    })
-    p3.then(()=>{
-
     })
 
 
   },
 
   //登陆后请求获取用户数据
-  getUserInformation: function () {
-    wx.request({
-      // 请求用户信息
-      url: 'https://example.com/onLogin',
-      success: res => {
-        //获取用户信息，填充用户名
-        this.setData({
-          nickName: {
-            type: String,
-            value: res.nickname
-          }
-        })
-        //获取用户荣誉值渲染
-        const yellowBackChild = this.selectAllComponents('.yellow-back-honor');
-        // yellowBackChild.setData({
-        //   innerText: {
-        //     type: String,
-        //     value: '荣誉' + res.credence_value,
-        //   }
-        // })
-        //获取用户flag完成度渲染页面
-        let theCompleteRate = res.have_flaged / res.should_flag_sum;
-        this.setData({
-          completeRate: {
-            type: Number,
-            value: theCompleteRate
-          }
-        })
-      }
+  getUserInformation: function (userInformation) {
+    console.log("填充用户数据啦");
+    console.log(userInformation.data);
+    let res = userInformation.data;
+    //获取用户信息，填充用户名
+    if (res.nickname) {
+      this.setData({
+        nickName: {
+          type: String,
+          value: res.nickname
+        }
+      })
+    }
+    //获取用户荣誉值渲染
+    const yellowBackChild = this.selectAllComponents('.yellow-back-honor');
+    console.log(typeof res.credence_value);
+    yellowBackChild[0].setData({
+      "innerText.value": '荣誉' + res.credence_value.toString()
     })
+    console.log(yellowBackChild[0].data.innerText);
+    //获取用户flag完成度渲染页面
+    if (res.should_flag_sum) {
+      let theCompleteRate = res.have_flaged / res.should_flag_sum;
+      this.setData({
+        completeRate: {
+          type: Number,
+          value: theCompleteRate
+        }
+      })
+    }
+    if (res.avatar_url) {
+      //登录修改用户头像
+      app.globalData.imageURL = res.avatar_url;
+    }
+
   },
+
   onReady: function () {
-    this.getUserInformation();
     this.drawProgressbg();
     this.drawCircle(this.data.completeRate.value);
   },
