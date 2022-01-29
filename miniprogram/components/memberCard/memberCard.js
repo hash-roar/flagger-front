@@ -4,11 +4,9 @@ Component({
      * 组件的属性列表
      */
     properties: {
-        innerText: {
-            type: Number,
-            value: 
-            2
-        }
+        index: Number,
+        member: Object,
+        should_flag_sum:Number
     },
 
     /**

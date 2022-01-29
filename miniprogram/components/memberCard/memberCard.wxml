@@ -1,13 +1,14 @@
-<view class="single-card-box">
-    <view class="rank">{{innerText}}</view>
-    <image src="../../images/default-portrait.png" class="userPortrait"></image>
+<view class="single-card-box" style="background-color:{{false?'#ffe768':'#fff'}};">
+    <view class="rank">{{index}}</view>
+    <image src="{{member.avatar_url.length>0?member.avatar_url:'../../images/default-portrait.png'}}" class="userPortrait"></image>
     <view>
         <view class="card-box">
-            <view class="nickname">ABCABCCABCAB</view>
+            <view class="nickname">{{member.nickname}}</view>
             <view class="punch-tag-box">
-                <yellowBack class="punch-tag-one"></yellowBack>
+                <yellowBack class="punch-tag-one" innerText="连续打卡{{member.sequential_flag_time}}天"></yellowBack>
+                <block  wx:if="{{member.is_admin}}"><yellowBack class="punch-tag-two" innerText="组长"></yellowBack></block>
             </view>
         </view>
     </view>
-    <view class="punch-rate">15/30</view>
+    <view class="punch-rate">{{member.flag_sum}}/{{should_flag_sum}}</view>
 </view>

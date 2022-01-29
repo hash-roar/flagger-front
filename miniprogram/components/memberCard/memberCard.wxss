@@ -53,4 +53,5 @@
 }
 .punch-rate{
     font-size: 30rpx;
+    padding-right: 20rpx;
 }
