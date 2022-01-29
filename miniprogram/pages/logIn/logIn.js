@@ -24,8 +24,8 @@ Page({
             data:{
                 "student_id":this.data.studentID,
                 "password":"",
-                "avatar_url":this.data.avatar_url,
-                "nickname":this.data.nickName
+                "avatar_url":this.data.userAvatarUrl,
+                "nickname":this.data.userNickName
             },
             header: {
                 'authentication':token,

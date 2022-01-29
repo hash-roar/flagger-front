@@ -5,59 +5,58 @@ Page({
      * 页面的初始数据
      */
     data: {
-        isJoined: false,
-        hideGiveUp: true,
+        isJoined: false,    //默认未加入flag
+        hideGiveUp: true,   
         hideGiveUpMsg: true,
-        hasClickOn: false,
-        flagInfo:{    
-            "fid":123,  
-            "flagger_title":"string",
-            "tag_title":"string",
-            "announcement":"string",
-            "is_member":true, 
-            "should_flag_sum":13 ,
-            "flagger_member":[
-                {
-                    "uid":234, 
-                    "avatar_url":"https://efewcwfef", 
-                    "nickname":"name", 
-                    "is_admin":false, 
-                    "flag_sum":134,
-                    "user_intre_tag":["tag1","tag2"], 
-                    "sequential_flag_time": 3 
-                },
-                {
-                    "uid":234, 
-                    "avatar_url":"https://efewcwfef", 
-                    "nickname":"name", 
-                    "is_admin":true, 
-                    "flag_sum":134,
-                    "user_intre_tag":["tag1","tag2"], 
-                    "sequential_flag_time": 3 
-                },
-                {
-                    "uid":234, 
-                    "avatar_url":"https://efewcwfef", 
-                    "nickname":"name", 
-                    "is_admin":false, 
-                    "flag_sum":134,
-                    "user_intre_tag":["tag1","tag2"], 
-                    "sequential_flag_time": 3 
-                },
-                
-            ]
-        
-        }
+        hasClickOn: true,     //默认已经打卡，打卡按钮不可用
+        fid: -1,    
+        flagInfo:{}
     },
     joinFlagFun:function(){
-        this.setData({
-            isJoined: !this.isJoined
-        })
-        wx.showToast({
-            title: '已加入！',  
-            icon: 'success',  
-            duration: 1500  
-        })
+        if(this.data.fid!==-1){
+            const token=wx.getStorageSync('token')
+            const p = wx.cloud.callContainer({
+                config: {
+                  env: 'prod-6gbc6i9v491283c0', 
+                },
+                path: '/join-flag', 
+                method: 'POST',
+                data:{
+                    'fid':this.data.fid
+                },
+                header: {
+                    'authentication':token,
+                    'X-WX-SERVICE': 'flagger',
+                    "content-type": "application/json"
+                },
+                complete:(res)=>{
+                    console.log(res);
+                    if(res.statusCode===200){
+                        this.setData({
+                            isJoined: !this.isJoined
+                        })
+                        wx.showToast({
+                            title: '已加入！',  
+                            icon: 'success',  
+                            duration: 1500  
+                        })
+                    }
+                    else{
+                        wx.showToast({
+                            title: '请求失败',
+                            icon: 'error'
+                        })
+                    }
+                }
+            });
+        }
+        else{
+            wx.showToast({
+                title: '请求失败',
+                icon: 'error'
+            })
+        }
+
     },
     giveUpFlagFun:function(){
         this.setData({
@@ -65,37 +64,143 @@ Page({
         })
     },
     confirmGiveUpFun:function(){
-        if(!this.data.hideGiveUp){
-            this.setData({
-                hideGiveUp: !this.data.hideGiveUp
-            })
-        }
-        if(this.data.isJoined){
-            this.setData({
-                isJoined: !this.data.isJoined
-            })
-        }
         this.setData({
-            hideGiveUpMsg: !this.data.hideGiveUpMsg
+            hideGiveUp: !this.data.hideGiveUp
         })
+        if(!this.data.hideGiveUp&&this.data.fid!==-1){
+            const token=wx.getStorageSync('token')
+            const p = wx.cloud.callContainer({
+                config: {
+                env: 'prod-6gbc6i9v491283c0', 
+                },
+                path: '/abandon-flag',
+                method: 'POST',
+                data:{
+                    "fid": this.data.fid,
+                },
+                header: {
+                    'authentication':token,
+                    'X-WX-SERVICE': 'flagger',
+                    "content-type": "application/json"
+                },
+                success:(res)=>{
+                    if(res.statusCode===200){
+                        wx.showToast({
+                          title: res.data.message,
+                        })
+                        if(this.data.isJoined){
+                            this.setData({
+                                isJoined: !this.data.isJoined
+                            })
+                        }
+                        this.setData({
+                            hideGiveUpMsg: !this.data.hideGiveUpMsg
+                        })
+                    }
+                    else{
+                        wx.showToast({
+                            title: '请求失败',
+                            icon: 'error'
+                        })
+                    }
+                },
+                fail:(res)=>{
+                    console.log(res);
+                }
+            });
+        }
     },
     clickOnFun:function(){
         if(!this.data.hasClickOn){
-            wx.showToast({
-                title: '打卡成功',
-            })
+            const token=wx.getStorageSync('token')
+            const p = wx.cloud.callContainer({
+                config: {
+                env: 'prod-6gbc6i9v491283c0', 
+                },
+                path: '/doing-flag',
+                method: 'POST',
+                data:{
+                    "fid": this.data.fid,
+                },
+                header: {
+                    'authentication':token,
+                    'X-WX-SERVICE': 'flagger',
+                    "content-type": "application/json"
+                },
+                success:(res)=>{
+                    if(res.statusCode===200){
+                        wx.showToast({
+                          title: res.data.message,
+                        })
+                        this.setData({
+                            hasClickOn:true
+                        })
+                    }
+                    else{
+                        wx.showToast({
+                            title: '请求失败',
+                            icon: 'error'
+                        })
+                    }
+                },
+                fail:(res)=>{
+                    console.log(res);
+                }
+            });
         }
-        this.setData({
-            hasClickOn:true
-        })
     },
     /**
      * 生命周期函数--监听页面加载
      */
+    // 判断是否打卡的函数：
+    flaggedTodayFun(members){
+        const app=getApp()
+        for(let i=0;i<members.length;i++){
+            if(app.globalData.userUID==members[i].uid){
+                this.setData({
+                    hasClickOn:members[i].flagged_today
+                })
+            }
+        }
+    },
     onLoad: function (options) {
         this.setData({
-            isJoined: this.data.flagInfo.is_member
+            fid: parseInt(options.fid)
         })
+        console.log(this.data.fid)
+        const token=wx.getStorageSync('token')
+        const p = wx.cloud.callContainer({
+            config: {
+              env: 'prod-6gbc6i9v491283c0', 
+            },
+            path: '/flaginfo', 
+            method: 'GET',
+            data:{
+                'fid':this.data.fid
+            },
+            header: {
+                'authentication':token,
+                'X-WX-SERVICE': 'flagger',
+                "content-type": "application/json"
+            },
+            complete:(res)=>{
+                console.log(res);
+                if(res.statusCode===200){
+                    this.setData({
+                        flagInfo:res.data,
+                        isJoined: res.data.is_member,
+
+                    })
+                    this.flaggedTodayFun(res.data.flagger_member)
+                }
+                else{
+                    wx.showToast({
+                        title: '请求失败',
+                        icon: 'error'
+                    })
+                }
+            }
+        });
     },
 
     /**

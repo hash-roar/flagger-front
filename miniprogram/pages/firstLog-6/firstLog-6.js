@@ -66,7 +66,7 @@ Page({
                 }
                 else{
                     wx.showToast({
-                        title: res.data.error,
+                        title: '请求失败',
                         icon: 'error'
                     })
                 }

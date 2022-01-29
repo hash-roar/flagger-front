@@ -22,4 +22,4 @@
     <text class="confirm-1">放弃成功</text>
     <text class="confirm-2">下一次想成为你坚定的选择</text>
     <view class="keepUp" bindtap="confirmGiveUpFun">好的</view>
-</view>
+</view> 
