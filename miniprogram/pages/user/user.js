@@ -102,6 +102,7 @@ Page({
       return new Promise((resolve, reject) => {
         wx.login({
           success(res) {
+            app.globalData.ifIsVistor = false;
             console.log("登录成功");
             if (res.code) {
               console.log(res);
