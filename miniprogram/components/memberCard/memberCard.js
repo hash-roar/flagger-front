@@ -6,7 +6,8 @@ Component({
     properties: {
         index: Number,
         member: Object,
-        should_flag_sum:Number
+        should_flag_sum:Number,
+        globalUid:Number
     },
 
     /**

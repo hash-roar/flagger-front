@@ -1,4 +1,4 @@
-<view class="single-card-box" style="background-color:{{false?'#ffe768':'#fff'}};">
+<view class="single-card-box" style="background-color:{{member.uid===globalUid?'#ffe768':'#fff'}};">
     <view class="rank">{{index}}</view>
     <image src="{{member.avatar_url.length>0?member.avatar_url:'../../images/default-portrait.png'}}" class="userPortrait"></image>
     <view> 
