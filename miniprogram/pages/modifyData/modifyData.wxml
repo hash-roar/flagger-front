@@ -1,0 +1,58 @@
+<!--pages/modifyData/modifyData.wxml-->
+<view class="user-data-box">
+    <view class="user-single-box">
+        <view class="data-portrait-box">
+            <image src="{{imageURLOne}}" class="modify-portrait">
+            </image>
+        </view>
+        <view class="data-username-box">
+            <input placeholder="用户名" class="input-username"></input>
+        </view>
+    </view>
+
+    <!-- 学位年级专业选择 -->
+    <view class="user-single-box">
+        <view wx:for="{{innerTextTwo}}" wx:for-item="item" data-index="{{index}}" wx:key="id" class="{{innerTextTwo[index].flagClass}}">
+            <input placeholder="{{innerTextTwo[index].value}}" value=""></input>
+        </view>
+    </view>
+    
+
+    <!-- 倾向Flag、环境选择、社交程度 -->
+    <view class="user-single-box">
+        <view bindtap="choosePreferFlag" wx:for="{{innerTextThree}}" wx:for-item="item" data-index="{{index}}" wx:key="id" class="{{innerTextThree[index].flagClass}}">
+            <text>{{innerTextThree[index].value}}</text>
+            <view class="iconfont {{isTap[index].value?'icon-upArray':'icon-chooseUpfold'}}"></view>
+        </view>
+    </view>
+
+    <view class="prefer-detail prefer-flag-detail-one {{theTappedOne == 0 && isTap[theTappedOne].value === true ? 'can-display':'not-display'}}">
+        <userTag class="userTagChild"  bindtap="choosePreferContent" wx:for="{{preferFlagTime}}" wx:for-item="item" data-index="{{index}}" wx:key="id">
+        </userTag>
+
+    </view>
+    <view class="prefer-detail prefer-flag-detail-two {{theTappedOne == 1 && isTap[theTappedOne].value === true ? 'can-display':'not-display'}}">
+        <userTag class="userTagChild" wx:for="{{preferEnviTime}}" wx:for-item="item" data-index="{{index}}" wx:key="id">
+        </userTag>
+    </view>
+
+    <view class="prefer-detail prefer-flag-detail-three {{theTappedOne == 2 && isTap[theTappedOne].value === true ? 'can-display':'not-display'}}">
+        <radio-group class="selectEnv">
+            <radio></radio>
+            <radio></radio>
+            <radio></radio>
+        </radio-group>
+        <!-- <userTag></userTag>
+        <userTag></userTag>
+        <userTag></userTag>
+        <userTag></userTag> -->
+        <view class="chooseEnv">
+            <view class="scary">社交恐惧</view>
+            <view>三五知己</view>
+            <view>社交达人</view>
+        </view>
+    </view>
+
+
+    <navigator url="/pages/user/user" open-type="switchTab" class="saveModifyData" bindtap="saveModifyData">保存</navigator>
+</view>
