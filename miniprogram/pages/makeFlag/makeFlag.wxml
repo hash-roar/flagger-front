@@ -8,7 +8,7 @@
 <view class="flagBox" style="padding-top:{{statusBarHeight}}px">
     <view class="boxSetting name">
         <text>名称</text>
-        <view><input type="text" placeholder="请输入名称" bindchange="nameFun" maxlength="30"/></view>
+        <view><input type="text" placeholder="请输入名称" bindchange="nameFun" maxlength="16"/></view>
     </view>
     <view class="boxSetting ">
         <text>分类</text>

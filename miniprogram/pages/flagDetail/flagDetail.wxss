@@ -22,8 +22,10 @@ page{
     background-color: #ffe768;
 }
 .topText{
-    font-size: 36rpx;
+    width: 252rpx;
+    font-size: 30rpx;
     font-weight: bold;
+    overflow: hidden;
 }
 .smaTag{
     display: inline-block;
