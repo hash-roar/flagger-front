@@ -16,7 +16,7 @@
             <!-- <my-radio class="sort-big" arr="{{sortBig}}"></my-radio> -->
             <my-radio class="sort-small" arr="{{sortSmall}}" bind:result="sortResultFun"></my-radio>
             <view hidden="{{!addSortActive}}" class="showMask"></view>
-            <view class="addSort {{addSortActive?'inputBgc':''}}"><input type="text" placeholder="+" placeholder-style="color: #000;font-size: 50rpx;font-weight: bold;"  bindblur="addSortFun"/></view>
+            <view class="addSort {{addSortActive?'inputBgc':''}}"><input type="text" placeholder="+" maxlength="4" placeholder-style="color: #000;font-size: 50rpx;font-weight: bold;"  bindblur="addSortFun"/></view>
             
         </view>
     </view>
@@ -37,7 +37,7 @@
         <view class="cycle">
             <my-radio class="selectCycle" arr="{{cycle}}" bind:result="cycleResultFun"></my-radio>
             <view hidden="{{!addCycleActive}}" class="showMask"></view>
-            <view class="addCycle {{addCycleActive?'inputBgc':''}}"><input type="number" placeholder="自定义" placeholder-style="color: #000;font-size: 28rpx;" bindblur="addCycleFun" value="{{cycleNum}}"/><text style="display:{{hasNum?'inline-block':'none'}}; height: 100%;vertical-align: top;color: black;padding: 0;">天</text></view>
+            <view class="addCycle {{addCycleActive?'inputBgc':''}}"><input type="number" placeholder="自定义" maxlength="5" placeholder-style="color: #000;font-size: 28rpx;" bindblur="addCycleFun" value="{{cycleNum}}"/><text style="display:{{hasNum?'inline-block':'none'}}; height: 100%;vertical-align: top;color: black;padding: 0;">天</text></view>
         </view>
     </view>
     <view class="boxSetting">

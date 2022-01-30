@@ -1,8 +1,8 @@
 <!--pages/historyDetail/historyDetail.wxml-->
 <view class="topBar"  style="padding-top:{{statusBarHeight}}px">
     <view class="FLGD" style="margin-top:{{statusBarHeight}}px">
-        <navigator open-type="navigateBack" style="margin-left:40rpx;"><image src="/icons/navigateBack.png" alt="{{'<'}}" style="width: 40rpx;height: 40rpx;"></image></navigator>
-        <text class="topText" style="margin: 0 20rpx;">{{flagInfo.flagger_title}}</text>
+        <navigator open-type="navigateBack" style="margin-left:30rpx;"><image src="/icons/navigateBack.png" alt="{{'<'}}" style="width: 40rpx;height: 40rpx;"></image></navigator>
+        <text class="topText" style="margin: 0 0 0 20rpx;">{{flagInfo.flagger_title}}</text>
         <text class="smaTag">{{flagInfo.flagger_member.length+'人'}}</text>
         <text class="smaTag">{{flagInfo.tag_title}}</text>
     </view>

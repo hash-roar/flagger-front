@@ -22,7 +22,7 @@ page{
     background-color: #ffe768;
 }
 .topText{
-    width: 252rpx;
+    width: 240rpx;
     font-size: 30rpx;
     font-weight: bold;
     overflow: hidden;
