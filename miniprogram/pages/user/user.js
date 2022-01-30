@@ -189,7 +189,7 @@ Page({
             if (result.statusCode == 200) {
               app.globalData.userUID = result.data.uid;
               wx.setStorageSync('token', result.data.token);
-              wx.setStorageSync('theUserUID', result.data.token);
+              wx.setStorageSync('theUserUID', result.data.uid);
               wx.redirectTo({
                 url: '../logIn/logIn'
               })
