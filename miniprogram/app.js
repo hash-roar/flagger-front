@@ -11,6 +11,8 @@ App({
 
     this.globalData = {
       searchFlags:[],
+      searchSuccessFlags:[],
+      historyFlags:[],
       userUID:-1,
       imageURL: "../../images/default-portrait.png",
       ifIsVistor:"true",
