@@ -1,8 +1,0 @@
-<navigator url="/pages/flagDetail/flagDetail?fid={{theCardDetail.fid}}" class="singleHistory">
-    <view class="historyTopic">
-        <tagTopic innerText="{{theCardDetail.flagger_title}}"></tagTopic>
-        <tag class = "history-tag" innerTextTag="{{theCardDetail.tag_title}}"></tag>
-    </view>
-    <view class="history-content">{{theCardDetail.announcement}}</view>
-    <view class="history-detail">></view>
-</navigator>
