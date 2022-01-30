@@ -1,25 +1,35 @@
 <!--pages/historyDetail/historyDetail.wxml-->
-<view class="notice-title">公告</view>
-<notice class="notice-content" innerText="{{flagInfo.announcement}}"></notice>
-<view class="card-count">打卡次数</view>
-<memberCard class="the-card" wx:for="{{flagInfo.flagger_member}}" member="{{flagInfo.flagger_member[index]}}" wx:key="index" index="{{index+1}}" should_flag_sum="{{flagInfo.should_flag_sum}}" globalUid="{{uid}}"></memberCard>
-<!-- <if-join></if-join> -->
-<!-- <tag class="click-to-punch"></tag> -->
-<view class="clickOn" bindtap="clickOnFun" style="background-color: {{hasClickOn?'#c2c2c2':'#ffe768'}};">打卡</view>
-
-<button class="giveUpFlag" style="width: 702rpx;background-color: #fff;color: #ff7566;margin-top: 40rpx;" bindtap="giveUpFlagFun" hidden="{{!isJoined}}">放弃</button>
-<button class="joinFlag" style="width: 702rpx;background-color: #ffe768;color: #000;margin-top: 40rpx;" bindtap="joinFlagFun" hidden="{{isJoined}}">加入</button>
-
-<view class="mask" hidden="{{hideGiveUp}}" bindtap="giveUpFlagFun"></view>
-<view hidden="{{hideGiveUp}}" class="confirmBox">
-    <text class="confirm-1">确定放弃吗？</text>
-    <text class="confirm-2">现在放弃相当于前功尽弃了</text>
-    <view class="keepUp" bindtap="giveUpFlagFun">再坚持一下</view>
-    <view class="confirmGiveUp" bindtap="confirmGiveUpFun">放弃</view>
+<view class="topBar"  style="padding-top:{{statusBarHeight}}px">
+    <view class="FLGD" style="margin-top:{{statusBarHeight}}px">
+        <navigator open-type="navigateBack" style="margin-left:40rpx;"><image src="/icons/navigateBack.png" alt="{{'<'}}" style="width: 40rpx;height: 40rpx;"></image></navigator>
+        <text class="topText" style="margin: 0 20rpx;">{{flagInfo.flagger_title}}</text>
+        <text class="smaTag">{{flagInfo.flagger_member.length+'人'}}</text>
+        <text class="smaTag">{{flagInfo.tag_title}}</text>
+    </view>
 </view>
-<view class="mask" hidden="{{hideGiveUpMsg}}" bindtap="confirmGiveUpFun"></view>
-<view hidden="{{hideGiveUpMsg}}" class="confirmBox-2">
-    <text class="confirm-1">放弃成功</text>
-    <text class="confirm-2">下一次想成为你坚定的选择</text>
-    <view class="keepUp" bindtap="confirmGiveUpFun">好的</view>
-</view> 
+<view style="margin-top:{{statusBarHeight+50}}px">
+    <view class="notice-title">公告</view>
+    <notice class="notice-content" innerText="{{flagInfo.announcement}}"></notice>
+    <view class="card-count">打卡次数</view>
+    <memberCard class="the-card" wx:for="{{flagInfo.flagger_member}}" member="{{flagInfo.flagger_member[index]}}" wx:key="index" index="{{index+1}}" should_flag_sum="{{flagInfo.should_flag_sum}}" globalUid="{{uid}}"></memberCard>
+    <!-- <if-join></if-join> -->
+    <!-- <tag class="click-to-punch"></tag> -->
+    <view class="clickOn" bindtap="clickOnFun" style="background-color: {{hasClickOn?'#c2c2c2':'#ffe768'}};">打卡</view>
+
+    <button class="giveUpFlag" style="width: 702rpx;background-color: #fff;color: #ff7566;margin-top: 40rpx;" bindtap="giveUpFlagFun" hidden="{{!isJoined}}">放弃</button>
+    <button class="joinFlag" style="width: 702rpx;background-color: #ffe768;color: #000;margin-top: 40rpx;" bindtap="joinFlagFun" hidden="{{isJoined}}">加入</button>
+
+    <view class="mask" hidden="{{hideGiveUp}}" bindtap="giveUpFlagFun"></view>
+    <view hidden="{{hideGiveUp}}" class="confirmBox">
+        <text class="confirm-1">确定放弃吗？</text>
+        <text class="confirm-2">现在放弃相当于前功尽弃了</text>
+        <view class="keepUp" bindtap="giveUpFlagFun">再坚持一下</view>
+        <view class="confirmGiveUp" bindtap="confirmGiveUpFun">放弃</view>
+    </view>
+    <view class="mask" hidden="{{hideGiveUpMsg}}" bindtap="confirmGiveUpFun"></view>
+    <view hidden="{{hideGiveUpMsg}}" class="confirmBox-2">
+        <text class="confirm-1">放弃成功</text>
+        <text class="confirm-2">下一次想成为你坚定的选择</text>
+        <view class="keepUp" bindtap="confirmGiveUpFun">好的</view>
+    </view>   
+</view>

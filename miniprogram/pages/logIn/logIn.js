@@ -100,7 +100,9 @@ Page({
               })
               this.deleteUserFun()
               wx.removeStorageSync('token')
+              wx.removeStorageSync('theUserUID')
               app.globalData.ifIsVistor=true
+              app.globalData.userUID=-1
               wx.switchTab({
                 url: '/pages/index/index',
               })

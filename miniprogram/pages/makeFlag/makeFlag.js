@@ -113,7 +113,6 @@ Page({
         })
     },
     confirmFun:function(){
-        console.log(this.data.end_time);
         const token=wx.getStorageSync('token')
         const p = wx.cloud.callContainer({
             config: {
@@ -183,7 +182,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        
     },
 
     /**

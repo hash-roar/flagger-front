@@ -6,6 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        statusBarHeight: wx.getSystemInfoSync()['statusBarHeight'],
         isJoined: false,    //默认未加入flag
         hideGiveUp: true,   
         hideGiveUpMsg: true,
@@ -179,7 +180,12 @@ Page({
             }
         }
     },
-    getFlagInfoFun:function(){
+    onLoad: function (options) {
+        this.setData({
+            fid: parseInt(options.fid),
+            uid: app.globalData.userUID
+        })
+        console.log(this.data.uid)
         const token=wx.getStorageSync('token')
         const p = wx.cloud.callContainer({
             config: {
@@ -213,14 +219,6 @@ Page({
             }
         });
     },
-    onLoad: function (options) {
-        this.setData({
-            fid: parseInt(options.fid),
-            uid: app.globalData.userUID
-        })
-        console.log(this.data.uid)
-        this.getFlagInfoFun()
-    },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
@@ -233,14 +231,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        const token=wx.getStorageSync('token')
-        console.log(token);
-        if(token.length>0){
-            app.globalData.ifIsVistor=false
-        }
-        else{
-            app.globalData.ifIsVistor=true
-        }
+        
     },
 
     /**

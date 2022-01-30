@@ -7,5 +7,6 @@
     "memberCard":"/components/memberCard/memberCard",
     "if-join":"/components/if-join/if-join"
   },
-  "navigationBarBackgroundColor":"#fee452"
+  "navigationBarBackgroundColor":"#fee452",
+  "navigationStyle": "custom"
 }

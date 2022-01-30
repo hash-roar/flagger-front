@@ -51,11 +51,13 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        //这里要写请求，再setData  removeStorageSync
+        //这里要写请求，再setData  removeStorageSync  theUserUID
         const token=wx.getStorageSync('token')
+        const uid=wx.getStorageSync('theUserUID')
         console.log(token);
         if(token.length>0){
             app.globalData.ifIsVistor=false
+            app.globalData.userUID=uid
         }
         else{
             app.globalData.ifIsVistor=true
@@ -98,7 +100,6 @@ Page({
                     "content-type": "application/json"
                 },
                 complete:(res)=>{
-                    console.log(res);
                     if(res.statusCode===200){
                         this.setData({
                             doneFlagObjArr:res.data
