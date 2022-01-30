@@ -27,6 +27,7 @@ Page({
     this.getUInfo();
   },
   getUInfo(){
+    const token=wx.getStorageSync('token');
     const notTheFirstTime = wx.cloud.callContainer({
       config: {
         env: 'prod-6gbc6i9v491283c0',
@@ -34,7 +35,8 @@ Page({
       path: '/get-user-info',
       method: 'GET',
       header: {
-        'X-WX-SERVICE': 'flagger'
+        'X-WX-SERVICE': 'flagger',
+        'authentication':token,
       },
       success: result=> {
         //成功拿到数据以后用  用户昵称、头像、完成度、荣誉值 填充页面
@@ -76,6 +78,7 @@ Page({
     // 先判断一下是否是初次登陆
 
     var p = new Promise((resolve, reject) => {
+      const token=wx.getStorageSync('token');
       const ifTheFirstTime = wx.cloud.callContainer({
         config: {
           env: 'prod-6gbc6i9v491283c0',
@@ -83,7 +86,8 @@ Page({
         path: '/isregistered',
         method: 'GET',
         header: {
-          'X-WX-SERVICE': 'flagger'
+          'X-WX-SERVICE': 'flagger',
+          'authentication':token,
         },
         success: function (result) {
           if (result.data.is_registered) {
@@ -129,6 +133,7 @@ Page({
       });
     }, () => {
       console.log("not the first time, get user information to draw");
+      const token=wx.getStorageSync('token');
       const notTheFirstTime = wx.cloud.callContainer({
         config: {
           env: 'prod-6gbc6i9v491283c0',
@@ -136,7 +141,8 @@ Page({
         path: '/get-user-info',
         method: 'GET',
         header: {
-          'X-WX-SERVICE': 'flagger'
+          'X-WX-SERVICE': 'flagger',
+          'authentication':token,
         },
         success: function (result) {
           //成功拿到数据以后用  用户昵称、头像、完成度、荣誉值 填充页面
@@ -163,6 +169,7 @@ Page({
     var p3 = p2.then((loginData, avatar_url) => {
       return new Promise((resolve, reject) => {
         console.log("发送用户相关数据到后台进行保存");
+        const token=wx.getStorageSync('token');
         const res = wx.cloud.callContainer({
           config: {
             env: 'prod-6gbc6i9v491283c0',
@@ -175,12 +182,14 @@ Page({
           path: '/login',
           method: 'POST',
           header: {
-            'X-WX-SERVICE': 'flagger'
+            'X-WX-SERVICE': 'flagger',
+            'authentication':token,
           },
           success: function (result) {
             if (result.statusCode == 200) {
               app.globalData.userUID = result.data.uid;
               wx.setStorageSync('token', result.data.token);
+              wx.setStorageSync('theUserUID', result.data.token);
               wx.redirectTo({
                 url: '../logIn/logIn'
               })
@@ -211,7 +220,7 @@ Page({
     //获取用户荣誉值渲染
     const yellowBackChild = this.selectAllComponents('.yellow-back-honor');
     yellowBackChild[0].setData({
-      "innerText.value": '荣誉' + res.credence_value.toString()
+      "innerText": '荣誉' + res.credence_value.toString()
     })
     //获取用户flag完成度渲染页面
     if (res.should_flag_sum) {
