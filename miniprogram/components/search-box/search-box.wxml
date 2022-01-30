@@ -1,3 +1,0 @@
-<view class="search-input">
-    <input class="search-text" placeholder="搜索" bindblur="getWhatToSearch"></input>
-</view>
