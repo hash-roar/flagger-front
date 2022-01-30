@@ -1,2 +1,0 @@
-
-<view class="history-tag" bindtap="handleTagTap">  {{innerText}}</view>
