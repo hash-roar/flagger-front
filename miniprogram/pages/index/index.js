@@ -51,10 +51,16 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        //这里要写请求，再setData
+        //这里要写请求，再setData  removeStorageSync
+        const token=wx.getStorageSync('token')
+        console.log(token);
+        if(token.length>0){
+            app.globalData.ifIsVistor=false
+        }
+        else{
+            app.globalData.ifIsVistor=true
+        }
         if(!app.globalData.ifIsVistor){
-            const token=wx.getStorageSync('token')
-            console.log(token);
             const p = wx.cloud.callContainer({
                 config: {
                 env: 'prod-6gbc6i9v491283c0', 
