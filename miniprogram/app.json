@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/search/search",
     "pages/user/user",
     "pages/modifyData/modifyData",
     "pages/modulePage/modulePage",
@@ -13,8 +14,7 @@
     "pages/firstLog-5/firstLog-5",
     "pages/firstLog-6/firstLog-6",
     "pages/makeFlag/makeFlag",
-    "pages/logIn/logIn",
-    "pages/search/search"
+    "pages/logIn/logIn"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
