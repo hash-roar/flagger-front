@@ -674,6 +674,8 @@ Page({
     drawBasicInfo(result) {
         const query = wx.createSelectorQuery();
         let userBasicData = result.data;
+        console.log("userBasicData");
+        console.log(userBasicData);
         //头像信息
         this.setData({
             imageURLOne: userBasicData.avatar_url
