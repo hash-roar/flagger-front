@@ -185,7 +185,6 @@ Page({
             fid: parseInt(options.fid),
             uid: app.globalData.userUID
         })
-        console.log(this.data.uid)
         const token=wx.getStorageSync('token')
         const p = wx.cloud.callContainer({
             config: {

@@ -136,7 +136,6 @@ Page({
                 "content-type": "application/json"
             },
             complete:(res)=>{
-                console.log(res);
                 if(res.statusCode===200){
                     wx.showToast({
                       title: res.data.message,
@@ -182,7 +181,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        
+
     },
 
     /**

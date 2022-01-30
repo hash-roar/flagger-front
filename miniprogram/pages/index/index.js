@@ -54,7 +54,6 @@ Page({
         //这里要写请求，再setData  removeStorageSync  theUserUID
         const token=wx.getStorageSync('token')
         const uid=wx.getStorageSync('theUserUID')
-        console.log(token);
         if(token.length>0){
             app.globalData.ifIsVistor=false
             app.globalData.userUID=uid
