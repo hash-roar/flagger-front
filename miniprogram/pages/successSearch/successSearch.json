@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#fddc30",
+  "backgroundColor": "#f7f7f7",
+  "usingComponents": {
+    "tag":"/components/tag/tag",
+    "historyTag":"/components/historyTag/historyTag"
+  }
+
+}

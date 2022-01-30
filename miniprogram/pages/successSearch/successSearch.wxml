@@ -1,0 +1,4 @@
+<view>搜索结果</view>
+<view wx:for="{{allSearchFlags}}" data-index="{{index}}" bindtap="goToFlagDetail">
+    <historyTag class=".single-flag-card" theCardDetail="{{allSearchFlags[index]}}"></historyTag>
+</view> 
