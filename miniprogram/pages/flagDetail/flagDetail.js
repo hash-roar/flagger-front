@@ -33,7 +33,6 @@ Page({
                     "content-type": "application/json"
                 },
                 complete:(res)=>{
-                    console.log(res);
                     if(res.statusCode===200){
                         this.setData({
                             isJoined: !this.isJoined
@@ -42,6 +41,12 @@ Page({
                             title: '已加入！',  
                             icon: 'success',  
                             duration: 1500  
+                        })
+                    }
+                    else if(res.statusCode===403){
+                        wx.showToast({
+                            title: '没有加入权限',  
+                            icon: 'error'
                         })
                     }
                     else{

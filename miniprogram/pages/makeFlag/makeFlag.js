@@ -113,6 +113,7 @@ Page({
         })
     },
     confirmFun:function(){
+        console.log(this.data.tag);
         const token=wx.getStorageSync('token')
         const p = wx.cloud.callContainer({
             config: {
