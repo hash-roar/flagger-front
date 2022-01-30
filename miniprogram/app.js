@@ -10,6 +10,7 @@ App({
     }
 
     this.globalData = {
+      searchFlags:[],
       userUID:0,
       imageURL: "../../images/default-portrait.png",
       ifIsVistor:"true",
