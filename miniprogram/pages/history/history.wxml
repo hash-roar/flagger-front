@@ -1,0 +1,4 @@
+<!--pages/history/history.wxml-->
+<view wx:for="{{theHistoryFlags}}" data-index="{{index}}" bindtap="goToFlagDetail">
+    <historyTag class=".single-flag-card" theCardDetail="{{theHistoryFlags[index]}}"></historyTag>
+</view> 
