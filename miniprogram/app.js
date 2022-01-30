@@ -11,7 +11,7 @@ App({
 
     this.globalData = {
       searchFlags:[],
-      userUID:0,
+      userUID:-1,
       imageURL: "../../images/default-portrait.png",
       ifIsVistor:"true",
       firstLogData: {
