@@ -1,12 +1,14 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/history/history",
     "pages/search/search",
     "pages/user/user",
+  
+    "pages/successSearch/successSearch",
     "pages/modifyData/modifyData",
     "pages/modulePage/modulePage",
-    "pages/flagDetail/flagDetail",
-    "pages/history/history",
+    "pages/flagDetail/flagDetail", 
     "pages/firstLog-1/firstLog-1",
     "pages/firstLog-2/firstLog-2", 
     "pages/firstLog-3/firstLog-3",
