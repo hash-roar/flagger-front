@@ -99,6 +99,7 @@ Page({
                 icon: 'error'
               })
               this.deleteUserFun()
+              wx.removeStorageSync('token')
               app.globalData.ifIsVistor=true
               wx.switchTab({
                 url: '/pages/index/index',
