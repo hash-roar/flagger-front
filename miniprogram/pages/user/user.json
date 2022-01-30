@@ -1,7 +1,0 @@
-{
-  "navigationBarBackgroundColor": "#f7e164",
-  "usingComponents": {
-    "userTagBox": "/components/userTagBox/userTagBox",
-    "yellowBack":"/components/yellowBack/yellowBack"
-  }
-}
