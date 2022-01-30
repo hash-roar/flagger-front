@@ -637,6 +637,7 @@ Page({
      */
 
     getBasicInfo() {
+        const token=wx.getStorageSync('token');
         const userPersonalInterface = wx.cloud.callContainer({
             config: {
                 env: 'prod-6gbc6i9v491283c0',
@@ -644,7 +645,8 @@ Page({
             path: '/get-user-info',
             method: 'GET',
             header: {
-                'X-WX-SERVICE': 'flagger'
+                'X-WX-SERVICE': 'flagger',
+                'authentication':token,
             },
             success: result => {
                 console.log(result);
@@ -825,6 +827,7 @@ Page({
             socialtendency: [this.data.afterChangerWhichSocialRadio],
             nickname: this.data.changeNickname,
         };
+        const token=wx.getStorageSync('token');
         const userPersonalInterface = wx.cloud.callContainer({
             config: {
                 env: 'prod-6gbc6i9v491283c0',
@@ -839,7 +842,8 @@ Page({
                 nickname: this.data.changeNickname,
             },
             header: {
-                'X-WX-SERVICE': 'flagger'
+                'X-WX-SERVICE': 'flagger',
+                'authentication':token
             },
             success: result => {
                 console.log(data);
