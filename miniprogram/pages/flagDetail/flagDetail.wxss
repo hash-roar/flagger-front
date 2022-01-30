@@ -34,7 +34,7 @@ page{
     background-color: #ffffff;
     border-radius: 25rpx;
     padding: 0 15rpx;
-    margin: 0 10rpx;
+    margin: 0 5rpx;
     line-height: 50rpx;
     font-size: 24rpx;
     color: #404040;
